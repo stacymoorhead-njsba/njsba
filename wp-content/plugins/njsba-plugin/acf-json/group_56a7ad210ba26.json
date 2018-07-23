@@ -1,0 +1,206 @@
+{
+    "key": "group_56a7ad210ba26",
+    "title": "Content Feed",
+    "fields": [
+        {
+            "key": "field_56a7ad2c533df",
+            "label": "Content Feed",
+            "name": "content_feed",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Feed or Link to another blog",
+            "min": "",
+            "max": 3,
+            "layouts": [
+                {
+                    "key": "56a7ad3a8fa47",
+                    "name": "feed",
+                    "label": "Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_56a7ad50533e0",
+                            "label": "Category",
+                            "name": "category",
+                            "type": "taxonomy",
+                            "instructions": "Pick what Category you'd like to show here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "category",
+                            "field_type": "radio",
+                            "allow_null": 0,
+                            "add_term": 0,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "object",
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_56a7ada9533e1",
+                            "label": "Display Date",
+                            "name": "date",
+                            "type": "true_false",
+                            "instructions": "If this box is checked, then dates will show up in your feed. If you want to hide the dates uncheck this box.<\/br><\/br>For example the Daily Clips have the date in their title so that might be a little redundant.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_56a7b3650d1f5",
+                            "label": "Additional Feed Items Button Text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "This is the text that shows up underneath the feed to show more articles.\r\nFor example you might put <strong>Read More Press Releases<\/strong> or <strong>Older Press Releases<\/strong> If not filled out it will default to <strong>Older posts<\/strong>.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "56a7aebe3e73f",
+                    "name": "external_feed",
+                    "label": " external blog\/podcast",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_56a7aedc3e740",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "Name of external source.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_56a7af3b3e741",
+                            "label": "Explanation text",
+                            "name": "explanation_text",
+                            "type": "textarea",
+                            "instructions": "Text describing what the external source is.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_56a7afc13e742",
+                            "label": "External link",
+                            "name": "button_url",
+                            "type": "text",
+                            "instructions": "Destination url (not displayed).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_56a7b0447e0c8",
+                            "label": "Visit external source button",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "The text displayed inside the button that directs to viewing the external source.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-new-and-publications.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1454430664
+}

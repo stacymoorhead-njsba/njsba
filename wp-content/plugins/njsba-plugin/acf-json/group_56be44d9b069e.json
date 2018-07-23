@@ -1,0 +1,40 @@
+{
+    "key": "group_56be44d9b069e",
+    "title": "Password Protection through Personify",
+    "fields": [
+        {
+            "key": "field_56be4518636c1",
+            "label": "Personify Protected",
+            "name": "personify_check",
+            "type": "true_false",
+            "instructions": "Check this box if you want users to have to log in through personify.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1455310395
+}

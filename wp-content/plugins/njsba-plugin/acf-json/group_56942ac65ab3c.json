@@ -1,0 +1,254 @@
+{
+    "key": "group_56942ac65ab3c",
+    "title": "Hero",
+    "fields": [
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "new_lines": "br",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "key": "field_56942ac66955c",
+                    "label": "Deck",
+                    "name": "deck",
+                    "type": "textarea",
+                    "instructions": "This is the text area right below the page title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_5697c3c99635f",
+                    "label": "Navigation Heading",
+                    "name": "navigation_heading",
+                    "type": "text",
+                    "instructions": "On the right of the hero this creates a sub navigation section.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "sub_fields": [
+                        {
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "key": "field_56ddcfe19183a",
+                            "label": "Navigation Link Text",
+                            "name": "sub_nav_link_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "key": "field_56ddcfa291839",
+                            "label": "Navigation Link URL",
+                            "name": "sub_nav_link_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Add Link to Navigation",
+                    "collapsed": "",
+                    "key": "field_56966d21b8515",
+                    "label": "Navigation",
+                    "name": "navigation",
+                    "type": "repeater",
+                    "instructions": "<ol>\r\n<li>Click the <strong>Add Link to Navigation<\/strong> button<\/li>\r\n<li>Add Text for the link in the section labeled <strong>Navigation Link Text<\/strong><\/li>\r\n<li>Add the URL in the section labeled <strong>Navigation Link URL<\/strong><\/li>\r\n<\/ol>",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "General Contact",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_56958461a4cc5",
+                    "label": "Contact Card heading",
+                    "name": "contact_text",
+                    "type": "text",
+                    "instructions": "This is the text that shows up above the contact card. It can be a heading or a person's name. For example:<\/br> <strong>Contact the Legal Department<\/strong> or <strong>For questions contact Jane Smith<\/strong>",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "post_type": [
+                        "people"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "key": "field_56942b14a6c0f",
+                    "label": "Contact Card Person",
+                    "name": "contact",
+                    "type": "post_object",
+                    "instructions": "Select the person whose contact information should appear in the contact card.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": 0,
+                    "message": "",
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "key": "field_569583e0bb870",
+                    "label": "Find Your FSR Search box",
+                    "name": "find_your_fsr",
+                    "type": "true_false",
+                    "instructions": "Check this box if you'd like to have the <strong>Find Your FSR <\/strong> search box show up in the hero.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 1,
+            "max": 1,
+            "layout": "block",
+            "button_label": "Add Banner",
+            "collapsed": "",
+            "key": "field_56942ac664e8d",
+            "label": "Hero",
+            "name": "hero",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-new-and-publications.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-people.php"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "counties"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "webinars.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "webinars.php"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1485382285
+}

@@ -1,0 +1,88 @@
+{
+    "key": "group_56a6dc11ab89c",
+    "title": "Assertive Content Feeds",
+    "fields": [
+        {
+            "key": "field_56a6ddbebc98d",
+            "label": "Assertive Content Feeds",
+            "name": "assertive_content_feeds",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_56a6dea8bc98e",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_56a6dea8bc98e",
+                    "label": "Category",
+                    "name": "feed_category",
+                    "type": "taxonomy",
+                    "instructions": "Pick a category Like <strong>News<\/strong> or a publication like <strong>\r\nSchool Leader<\/strong>.\r\n\r\n<\/br>\r\n<\/br>\r\nIf you pick a publication like school leader, it will get the most recent volume.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "category",
+                    "field_type": "radio",
+                    "allow_null": 1,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_56a7a2901ff23",
+                    "label": "additional feed items button text",
+                    "name": "button_text",
+                    "type": "text",
+                    "instructions": "This is the text that shows up underneath the feed to show more articles.\r\nFor example you might put <strong>More from this issue<\/strong> or <strong>Older Press Releases<\/strong> If not filled out it will default to <em>Older posts<\/em>.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-new-and-publications.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1454426895
+}

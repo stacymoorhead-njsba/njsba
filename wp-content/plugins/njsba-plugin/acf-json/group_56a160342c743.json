@@ -1,0 +1,73 @@
+{
+    "key": "group_56a160342c743",
+    "title": "Post Footer",
+    "fields": [
+        {
+            "key": "field_56b21a83754d0",
+            "label": "Custom Post footer",
+            "name": "post_footer_check",
+            "type": "radio",
+            "instructions": "Use these controls to override the default post footer with a custom one or not display one at all.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default Post Footer",
+                "custom": "Custom Post Footer",
+                "false": "No Post Footer"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "default",
+            "layout": "vertical"
+        },
+        {
+            "key": "field_56a1603b18504",
+            "label": "Post Footer",
+            "name": "post_footer",
+            "type": "wysiwyg",
+            "instructions": "Add a Footer to your post such as listing some of the accomplishments of the writer, or linking to their blog.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b21a83754d0",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1454514557
+}

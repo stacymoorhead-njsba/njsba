@@ -1,0 +1,61 @@
+{
+    "key": "group_5697d030759e0",
+    "title": "Sidebar",
+    "fields": [
+        {
+            "key": "field_5697d106d1690",
+            "label": "Sidebar",
+            "name": "sidebar",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 1,
+            "layout": "row",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_5697d131d1691",
+                    "label": "Find Your FSR Widget",
+                    "name": "find_your_fsr",
+                    "type": "true_false",
+                    "instructions": "Check this box if you'd like the \"Find your FSR\" widget to show up in the sidebar.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1456456362
+}
