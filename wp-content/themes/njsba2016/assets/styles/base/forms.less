@@ -1,0 +1,39 @@
+.form__item {
+  .margin-bottom(@basebottommargin);
+}
+
+.input-mini { 
+width : 60px; }
+
+.input-small { 
+width : 90px; }
+
+
+
+// single text input with a submit button next to it
+.input-and-submit {
+  display: flex;
+  > input[type='text'],
+  > input[type='search'],
+  > input[type='url'],
+  > input[type='number'],
+  > input[type='tel'] {
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  > button,
+  > input[type="submit"] {
+    margin-left: 2px;
+    padding: 8px 12px;
+    vertical-align: top;
+  }
+}
+
+// Search form on Search Results page {
+.search__input {
+  padding: 8px 8px 7px;
+  min-width: 75%;
+  margin-bottom: 0;
+  margin-right: 5px;
+  vertical-align: middle;
+}

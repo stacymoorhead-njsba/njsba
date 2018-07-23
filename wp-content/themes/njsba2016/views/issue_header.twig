@@ -1,0 +1,22 @@
+{% spaceless %}
+<div class="container">
+
+	<h2>{{heading}}</h2>
+
+	{% if pdf_link %}
+
+	<a class="issue" href="{{pdf_link}}">
+
+		{% if cover_image %}
+			<img src="{{cover_image}}" alt="A Picture of this Issue's Cover">
+		{% endif %}
+
+		Current Issue PDF
+
+	</a>
+	bob
+
+	{% endif %}
+
+</div>
+{% endspaceless %}

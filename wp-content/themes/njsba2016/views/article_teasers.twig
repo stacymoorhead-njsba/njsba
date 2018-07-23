@@ -1,0 +1,68 @@
+{% spaceless %}
+<div class="container">
+    <section class="row{% if not_first %}{% else %} row--first{% endif %}">
+        
+        {% if heading %}
+        <header class="section__header">
+          
+          {% if archive_link_url %}
+
+            <h2><a href="{{archive_link_url}}">{{heading}}</a></h2>
+
+          {% else %}
+
+            <h3>{{heading}}</h3>
+
+          {% endif %}
+
+          {% if subhead %}
+            <p class="subhead">{{subhead}}</p>
+          {% endif %}
+
+        </header>
+        {% endif %}
+        
+        {% for post in posts %}
+          <article class="article--teaser col--third">
+
+            <h4 class="title teaser__title">
+              <a href="{{post.url}}">{{post.post_title}}</a>
+            </h4>
+            {% if dates %}
+
+              <p class="lesser">{{post.post_date|date("F d, Y")}}</p>
+
+            {% endif %}
+            <p>{{post.post_excerpt}}</p>
+
+          </article>
+
+        {% endfor %}
+
+        {% if archive_link_url %}
+  
+          <div class="clear">
+            <a class="btn btn--small" href="{{archive_link_url}}">
+              {{archive_link_txt}}
+            </a>
+          </div>
+  
+        {% endif %}
+       
+    </section>
+  {% if pagenation %}
+    <nav class="pagination pagination--listing">
+
+    <ul>
+      {% if pagenation.prev %}
+          <li class="prev">{{pagenation.prev}}</li>
+      {% endif %}
+
+      {% if pagenation.next %}
+          <li class="next">{{pagenation.next}}</li>
+      {% endif %}
+    </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endspaceless %}

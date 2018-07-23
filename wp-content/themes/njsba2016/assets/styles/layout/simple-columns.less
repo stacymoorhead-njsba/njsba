@@ -1,0 +1,142 @@
+// Tai's Simple (Non-Grid-System) Columns
+
+/*
+
+Use for two- and three- column layouts.
+
+Here's how this works:
+
+1. Give your columns whatever class names you want, indicative of usage. 
+   For instance, .col-primary and .col-seconary; .col-major and .col-minor; 
+   .col-first and .col-second; whatever.
+2. Use the mixin on each column. Define the width using preset variables, 
+   or whatever percentages you want. Set the float and the margins.
+3. You can redefine everything at any breakpoint by using the mixin again.
+
+Tips:
+
+1. If columns are stacked (for small screen sizes, usually), the width 
+   should be set to auto and the float set to none.
+2. Two- and three- columns should be floated.
+3. There should be no side margins on the left and right edges of the
+   container. For instance, in two-column layouts, the left column should
+   only have a right margin, and the right column should only have a left
+   margin. In three column layouts, the same -- while the middle column
+   should have both a left and right column.
+4. Don't use the .container class in your selector. Selectors using this
+   mixin should be by themselves. Use a more specific class if you need.
+
+Example:
+
+  @media only screen and (min-width: 55em) {
+    .col-major {
+      .simple-column(@twothirds, right, @gutterwidth, 0);
+    }
+    .col-minor {
+      .simple-column(@onethird, left, 0, @gutterwidth);
+    }
+  }
+
+*/
+
+.simple-column(@width, @float, @margin-left, @margin-right) {
+  width: @width;
+  float: @float;
+  margin-left: @margin-left;
+  margin-right: @margin-right;
+}
+
+// A single, solo column to limit line length -- do not use in conjunction with the .simple-column mixin
+.col--solo {
+  display: block;
+  float: none;
+  max-width: 40em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Trying something new here, these items can repeat and form new lines without separate "row" wrapper divs.
+// This mixin is applied to each column rather than the container.
+// Include the mixin inside of whatever media query is appropriate.
+// Warning: this gets all messed up if you're also using flexbox
+.halves() {
+  float: left;
+  width: 46%;
+  margin-right: 2%;
+  margin-left: 2%;
+  &:nth-of-type(1n) {
+    width: 48%;
+    margin-right: 4%;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n) {
+    width: 48%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+.thirds() {
+  float: left;
+  width: 31.333%;
+  margin-right: 1%;
+  margin-left: 1%;
+  &:nth-of-type(1n) {
+    width: 32%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n) {
+    width: 32%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+  &:nth-of-type(3n) {
+    width: 32%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n+1) {
+    clear: none;
+  }
+  &:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+// For this site
+@media only screen and (min-width: 45em) {
+  .col--third {
+    .halves();
+  }
+}
+@media only screen and (min-width: 60em) {
+  .col--third {
+    .thirds();
+  }
+}
+@media only screen and (min-width: 60em) {
+  .col--primary {
+    .simple-column(@goldenlarger, left, 0, @gutterwidth);
+  }
+  .col--secondary {
+    .simple-column(@goldensmaller, right, @gutterwidth, 0);
+    h2 {
+      .font-size(@h3size);
+    }
+  }
+  .col--primary--larger {
+    width: @threequarters;
+  }
+  .col--secondary--smaller {
+    width: @onequarter;
+  }
+  .col--left {
+    float: left;
+  }
+  .col--right {
+    float: right;
+  }
+}

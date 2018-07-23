@@ -1,0 +1,55 @@
+.pagination {
+  .clearfix();
+  clear: both;
+  padding: (@baselineheight/2) 0;
+  border-top: 1px solid @bordercolor;
+  > p {
+    float: left;
+    margin: 0;
+  }
+  > ul {
+    margin: 0;
+    list-style: none;
+    > li {
+      display: inline;
+    }
+  }
+}
+
+@media only screen and (min-width: 20em) {
+  .pagination {
+    .next, 
+    .prev {
+      width: 48%;
+    }
+    .next {
+      float: right;
+      margin-left: 1%;
+      text-align: right;
+    }
+    .prev {
+      float: left;
+      margin-right: 1%;
+    }
+  }
+}
+
+.pagination--listing strong,
+.pagination--listing a,
+.page-numbers {
+  display: inline-block;
+	padding: 0.25em 0.75em;
+	font-weight: bold;
+}
+
+.pagination--listing a,
+a.page-numbers {
+  border-radius: @borderradius;
+  &:hover,
+  &:active,
+  &:focus {
+  	text-decoration: none;
+  	background: @navLinkBackgroundHover;
+  	color: @darkneutralcolor;
+  }
+}

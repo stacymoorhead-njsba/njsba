@@ -1,0 +1,18 @@
+{% extends "content-1.twig" %}
+
+{% if row_first %}
+	{% set row_first = 'row--first' %}
+{% endif %}
+
+{% block col__primary %}
+	
+	<div class="css-columns">
+		
+		{{content}}
+
+	</div>
+
+{% endblock %}
+
+{% block col__secondary %}
+{% endblock %}

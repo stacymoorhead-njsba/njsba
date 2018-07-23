@@ -1,0 +1,45 @@
+.hero {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: @neutralcolor;
+  position: relative;
+  overflow: hidden;
+  .clearfix;
+}
+
+.hero__content {
+  padding: 20px 5%;
+  color: @white;
+  background: fadeOut(@darkneutralcolor, 35%);
+}
+
+.hero__statement {
+  .font-size(36);
+  font-weight: bold;
+  line-height: 1.25em;
+  padding: 1em 5%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 36em) {
+  .hero__statement {
+    padding: 2em 5%;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .hero__statement {
+    .font-size(50);
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .hero--headerbg {
+    top: -10.6em;
+    margin-bottom: -10.6em;
+    .hero__statement {
+      margin-top: 2em;
+    }
+  }
+}

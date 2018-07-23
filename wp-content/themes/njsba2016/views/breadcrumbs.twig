@@ -1,0 +1,28 @@
+{% spaceless %}
+	<nav class="breadcrumb">
+      	<ul class="nav">
+      		
+		{% if home %}
+			{{home}}
+		{% endif %}
+
+		{% if menu %}
+			{{menu}}
+		{% endif %}
+
+   		{% for link in navigation %}
+			
+			{% if link.url %}
+
+   			<li><a href="{{link.url}}">{{link.text}}</a></li>
+
+			{% else %}
+
+			<li><strong>{{link.text}}</strong></li>
+
+			{% endif %}
+
+   		{% endfor %}
+      </ul>
+		</nav>
+{% endspaceless %}

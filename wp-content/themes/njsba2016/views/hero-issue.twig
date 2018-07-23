@@ -1,0 +1,54 @@
+{% spaceless %}
+  <main id="site-main">
+  <header class="page-header">
+      
+      <nav class="breadcrumb">
+        <ul class="nav">
+          <li><a href="">Home</a></li>
+          <li><a href="">News &amp; Publications</a></li>
+          <li><strong>School Leader</strong></li>
+        </ul>
+      </nav>
+    
+      <div class="page-header__primary">
+        <h1 class="title">{{heading}}</h1>
+
+          {% if text %}
+
+          <p class="subhead">
+            {{text}}
+          </p>
+
+          {% endif %}
+      </div>
+      
+      {% if secondary %}
+
+      <div class="page-header__secondary">
+        <nav class="subnav">
+          <ul class="nav">
+
+            {% for nav_item in subnav %}
+              <li>
+                <a href="{{nav_item.link}}">{{nav_item.text}}</a>
+              </li>
+            {% endfor %}
+            {% if pdf %}
+
+              <li>
+                <a href="{{pdf.link}}" target="_blank">
+                  {{pdf.text}}
+                  <img src="{{pdf.image}}" alt="">
+                </a>
+              </li>
+
+            {% endif %}
+
+          </ul>
+        </nav>
+      </div>
+
+     {% endif %}{# secondary #}
+
+  </header>
+{% endspaceless %}

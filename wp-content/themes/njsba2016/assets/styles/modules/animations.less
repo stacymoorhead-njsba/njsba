@@ -1,0 +1,48 @@
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.animate--fadeinup {
+  animation: fadeInUp .3s ease-out;
+}
+
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-out;
+    opacity: 0;
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.animate--flipInX {
+  backface-visibility: visible !important;
+  animation: flipInX .3s;
+}
+
+@keyframes flipOutX {
+  from {
+    transform: perspective(400px);
+  }
+
+  to {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+.animate--flipOutX {
+  animation: flipOutX .3s;
+  backface-visibility: visible !important;
+}

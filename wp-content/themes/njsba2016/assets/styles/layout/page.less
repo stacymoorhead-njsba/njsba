@@ -1,0 +1,126 @@
+
+.skip {
+  .visuallyhidden();
+}
+
+#site-main {
+  padding-bottom: @baselineheight;
+  background: @white;
+  color: @textcolor;
+}
+
+.container,
+.row {
+  clear: both;
+  .clearfix;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.row {
+  border-top: 1px solid @bordercolor;
+  padding-top: @baselineheight*1.5;
+  padding-bottom: @baselineheight*1.5;
+  &:empty {
+    padding: 0;
+  }
+}
+.row--first {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.page-header {
+  background: @midneutralcolor url('../images/pattern-triangles-small.png') repeat;
+  min-height: 10em;
+  padding: @baselineheight 5%;
+  .margin-bottom(@basebottommargin*2);
+  .clearfix;
+  color: @white;
+  h1 {
+    color: @white;
+  }
+}
+
+.page-header--has-image {
+  .page-header__secondary {
+    .clearfix;
+  }
+  .subnav {
+    box-sizing: border-box;
+    float: left;
+    width: 60%;
+    clear: none;
+  }
+  .issue {
+    box-sizing: border-box;
+    float: right;
+    width: 38%;
+    background: @white;
+    padding: 5px;
+    clear: none;
+  }
+}
+
+.page-header__secondary .card {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header + .banner {
+  margin-top: -@basebottommargin*2em;
+  margin-top: -@basebottommargin*2rem;
+}
+
+.section-teaser {
+  padding-bottom: @baselineheight;
+  .margin-bottom(@basebottommargin);
+}
+
+.section__header {
+  .margin-bottom(@basebottommargin);
+  .clearfix;
+}
+
+.publication-footer {
+  background: @lightestneutralcolor;
+  padding: @baselineheight*1.5 0 @baselineheight;
+  margin-bottom: -@baselineheight;
+}
+
+@media only screen and (min-width: 55em) {
+  .row {
+    padding-top: @baselineheight*2;
+    padding-bottom: @baselineheight*2;
+    &:empty {
+      padding: 0;
+    }
+  }
+  .row--first {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .section-teaser {
+    .halves();
+  }
+  .page-header__primary {
+    .simple-column(@goldenlarger, left, 0, @gutterwidth);
+  }
+  .page-header__secondary {
+    .simple-column(@goldensmaller, left, @gutterwidth, 0);
+    .card {
+      float: right;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.css-columns {
+  .columns(250px, auto, 25px, transparent, none, 0);
+}

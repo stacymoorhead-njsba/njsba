@@ -1,0 +1,594 @@
+html {
+  height: 100%;
+  background : @bodycolor; 
+  font-size : 90%;
+  -webkit-overflow-scrolling : touch; 
+  -webkit-text-size-adjust : 100%; 
+  -ms-text-size-adjust : 100%;
+}
+
+@media screen and (min-width: 30em) {
+  html {
+    font-size:100%;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  html {
+    font-size:110%;
+  }
+}
+
+body {
+  margin : 0;
+  padding : 0;
+  width : 100%;
+  min-height: 100%;
+  background-color : @footercolor;
+  font-family : @basefont;
+  .font-size(@basefontsize);
+  line-height : @baselineheight;
+  color : @white;
+}
+
+// LINKS
+
+a { 
+	text-decoration : none;
+	color : @linkcolor;
+	background-color: transparent;
+	
+	&:visited { 
+	  color : @linkcolorvisited;
+	}
+	
+	&:hover { 
+  	text-decoration : underline;
+  	color : @linkcolorhover;
+	}
+	
+	&:focus { 
+  	outline : thin dotted; 
+  	color : @linkcolorfocus;
+	}
+	
+	&:hover, 
+	&:active { 
+	  outline : 0;
+	}
+}
+
+// HEADINGS
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-family : @baseheadingfont;
+  font-weight : @baseheadingfontweight;
+  color : @baseheadingfontcolor;
+  margin: 0;
+  .margin-bottom(@basebottommargin/2);
+}
+
+h1 small, 
+h2 small,
+h3 small,
+h4 small {
+  font-size: 50%;
+  line-height: 1;
+  color : @lightgrey;
+}
+
+h1, 
+h2 {
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+}
+
+h1 { 
+.font-size(@h1size);
+}
+
+h2 { 
+.font-size(@h2size);
+}
+
+h3 { 
+.font-size(@h3size);
+}
+
+h4 { 
+.font-size(@h4size);
+}
+
+h5 { 
+.font-size(@h5size);
+}
+
+h6 { 
+.font-size(@h6size);
+}
+
+p, ol, ul, dl, menu, address, pre, blockquote { 
+  margin : 0;
+  .margin-bottom(@basebottommargin);
+  line-height : @baselineheight;
+}
+
+small { 
+  font-size: 80%;
+}
+
+ul, 
+ol,
+menu { 
+  padding-left: @baseleftpadding;
+}
+
+li ul, 
+li ol { 
+  margin : 0;
+}
+
+nav ul,
+nav ol,
+form ul,
+form ol {
+  list-style: none;
+  list-style-image: none;
+  padding: 0;
+}
+
+dl, 
+dd { 
+  margin-bottom : @baselineheight;
+}
+
+dt { 
+  font-weight : bold;
+}
+
+address {
+  font-style: normal;
+}
+
+q { 
+  quotes : none;
+}
+
+blockquote {
+  border-left: 1px solid @bordercolor;
+  padding-left: @baseleftpadding;
+  font-style: italic;
+}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+  content : '';
+  content : none;
+}
+
+cite {
+  font-style : normal; 
+}
+
+b, strong { 
+  font-weight : bold;
+}
+
+pre, 
+code, 
+kbd, 
+samp { 
+  font-family : @codefont;
+  font-size: 1em;
+}
+
+pre { 
+  white-space : pre; 
+  white-space : pre-wrap; 
+  word-wrap : break-word; 
+  overflow: auto;
+}
+
+sub, 
+sup { 
+  position : relative;
+  font-size: 75%;
+  line-height : 0; 
+  vertical-align : baseline;
+}
+
+sup { 
+  top : -0.5em;
+}
+
+sub { 
+  bottom : -0.25em;
+}
+
+mark {
+  background-color: desaturate(@infocolor, 30%);
+}
+
+// Other elements
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr { 
+  box-sizing: content-box;
+  display : block; 
+  margin : 1em 0; 
+  padding : 0;
+  height : 0; 
+  border : 0; 
+  border-top : 1px solid @bordercolor;
+  border-bottom : 1px solid @white;
+}
+
+img {
+  max-width : 100%;
+  width: auto;
+  height: auto;
+  border : 0; 
+  vertical-align : middle; 
+  -ms-interpolation-mode : bicubic;
+}
+
+svg {
+  max-height: 100%;
+}
+
+svg:not(:root) {
+  overflow : hidden;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+// figure
+
+figure {
+  margin : 0 0 @baselineheight; 
+  
+  > img {
+  margin-bottom : @baselineheight / 4; }
+  
+  > figcaption {
+  display : block;
+  font-weight : normal;
+  .font-size(14); 
+  color : @grey;
+  }
+}
+
+/* Tables =================================================== */
+
+table {
+	width : 100%;
+	max-width : 100%;
+	margin-bottom : @baselineheight;
+	border-collapse : collapse;
+	border-spacing : 0;
+	background-color : @tablebackground; 
+}
+
+th,
+td {
+  padding : @tablecellpadding;
+  border-top : @tableborderwidth @tableborderstyle @tableborder; 
+  .font-size(@basefontsize);
+  line-height : inherit;
+  text-align : left;
+  vertical-align : top;
+}
+
+th {
+  font-weight : bold;
+}
+
+thead th {
+  vertical-align : bottom;
+}
+
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top : 0;
+}
+
+tbody + tbody {
+  border-top : @tableborderwidth * 2 @tableborderstyle @tableborder;
+}
+
+/* Forms =================================================== */
+
+form { 
+	margin : 0;
+	small {
+  	color : @lightgrey;
+  }
+	p {
+  	margin-bottom : @baselineheight / 2;
+  }
+}
+
+fieldset { 
+  margin : 0; 
+  padding : 0; 
+  border : none;
+  min-width: 0;
+}
+
+legend { 
+  display : block;
+  width : 100%;
+  .margin-bottom(@basebottommargin/2);
+//  *margin-left : -7px; 
+  padding : 0;
+  border : 0;
+  color : @textcolor;
+  font-weight: bold;
+  white-space : normal;
+}
+
+label {
+  display : block;
+  max-width: 100%;
+  .margin-bottom(@basebottommargin/4);
+  font-weight : bold;
+/*
+  input,
+  textarea,
+  select {
+    display : block; 
+  }
+*/
+  small {
+    font-weight: normal;
+  }
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; 
+  overflow: visible;
+  .btn;
+}
+
+input[type="submit"] {
+  .btn--primary;
+}
+input[type="reset"] {
+  .btn--lesser;
+}
+
+input,
+button,
+select,
+textarea {
+  .font-size(@basefontsize);
+  vertical-align : baseline; 
+  *vertical-align : middle;
+  font-family : @basefont;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea {
+  
+}
+
+input,
+textarea,
+select {
+  display : inline-block;
+  margin-bottom : @baselineheight / 4;
+  color : lighten(@textcolor, 10%); 
+}
+
+input,
+textarea {
+  padding : 6px 8px;
+  .placeholder();
+  background-color : @inputbackground;
+  border : @inputborderwidth @inputborderstyle @inputborder;
+  border-radius: @inputborderradius;
+  &:hover {
+    border-color : @inputhover;
+  }
+}
+
+/* Correcting text-transform inheritance on these elements */
+button,
+select {
+  text-transform: none;
+}
+
+/* FF3+ fixes */
+button,
+input {
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* make sure placeholder goes away on focus */
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+[placeholder]:focus::-moz-placeholder {
+  color: transparent;
+}
+[placeholder]:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  width : auto;
+  height : auto;
+  padding : 0;
+//  margin : 3px 0;
+  line-height : normal;
+  cursor : pointer;
+  border-radius: 0;
+}
+
+input[type="checkbox"], 
+input[type="radio"] {  
+  box-sizing: border-box;
+  padding : 0; 
+}
+
+input[type="image"] {
+  border : 0; 
+  box-shadow: none;
+}
+
+input[type="file"] {
+  width : auto;
+  padding : initial;
+  line-height : initial;
+  border : initial;
+  background-color : transparent;
+  background-color : initial;
+  box-shadow: none;
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  width : auto;
+  height : auto;
+  cursor : pointer;
+  *overflow : visible;
+}
+
+input[type="number"] {
+  width: auto;
+}
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+select,
+input[type="file"] {
+//  *margin-top : 4px; 
+}
+
+input[type="search"],
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+select {
+
+}
+
+select[multiple],
+select[size] {
+  height : auto;
+}
+
+textarea {
+  .resize(vertical);
+  width: 100%;
+  height : auto;
+  overflow : auto; 
+  vertical-align : top;
+}
+
+input[type="hidden"] {
+  display : none;
+}
+
+// disabled
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  opacity: .5;
+  cursor : not-allowed;
+}
+
+// focus and active
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color : @inputfocus;
+  color: @textcolor;
+  outline : 0;
+  outline : thin dotted \9;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus {
+  box-shadow: none;
+}

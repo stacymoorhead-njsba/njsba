@@ -1,0 +1,145 @@
+/* define breakpoints here */
+@grid-bp1: 25em; /* 400px */
+@grid-bp2: 30em; /* 480px */
+@grid-bp3: 40em; /* 640px */
+@grid-bp4: 50em; /* 800px */
+@grid-bp5: 60em; /* 960px */
+
+/*
+  the container for the items;
+  needs a min class and a max class on it 
+  - min classes: .min1, .min2, .min3
+  - max classes: .max3, .max4, .max5, .max6
+*/
+.grid-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  .clearfix();
+}
+
+/* each item */
+.grid-item {
+  display: inline;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+
+/* below smallest breakpoint */
+.min1 .grid-item {
+  width: 96%;
+}
+.min2 .grid-item {
+  width: 46%;
+}
+.min3 .grid-item {
+  width: 29.333%;
+}
+.min2 .grid-item:nth-of-type(2n+1),
+.min3 .grid-item:nth-of-type(3n+1) {
+  clear: left;
+}
+
+
+@media only screen and (min-width: @grid-bp1) {
+/* 
+  max6 and max5 become 3-column, unless they have min1,
+  in which case they become 2-column. All else stay at
+  their minimum.
+*/
+  .max6 .grid-item,
+  .max5 .grid-item {
+    width: 29.333%;
+  }
+  .min1 .grid-item {
+    width: 46%;
+  }
+  .min1 .grid-item:nth-of-type(3n+1),
+  .min2 .grid-item:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .max6 .grid-item:nth-of-type(3n+1),
+  .max5 .grid-item:nth-of-type(3n+1),
+  .min1 .grid-item:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+
+
+@media only screen and (min-width: @grid-bp2) {
+/*
+  max4 and max3 become 3-column.
+*/
+  .max4 .grid-item,
+  .max3 .grid-item {
+    width: 29.333%;
+  }
+  .min1 .grid-item:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .max4 .grid-item:nth-of-type(3n+1),
+  .max3 .grid-item:nth-of-type(3n+1), {
+    clear: left;
+  }
+
+}
+
+@media only screen and (min-width: @grid-bp3) {
+/*
+  max6 and max5 become 4-column.
+*/
+  .max6 .grid-item,
+  .max5 .grid-item {
+    width: 21%;
+  }
+  .max6 .grid-item:nth-of-type(3n+1),
+  .max5 .grid-item:nth-of-type(3n+1),
+  .max3 .grid-item:nth-of-type(3n+1) {
+    clear: none;
+  }
+  .max6 .grid-item:nth-of-type(4n+1),
+  .max5 .grid-item:nth-of-type(4n+1),
+  .max3 .grid-item:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+@media only screen and (min-width: @grid-bp4) {
+/*
+  max6 and max5 become 5-column. max4 becomes 4-column.
+*/
+  .max6 .grid-item,
+  .max5 .grid-item {
+    width: 16%;
+  }
+  .max4 .grid-item {
+    width: 21%;
+  }
+  .max6 .grid-item:nth-of-type(4n+1),
+  .max5 .grid-item:nth-of-type(4n+1),
+  .max4 .grid-item:nth-of-type(3n+1) {
+    clear: none;
+  }
+  .max6 .grid-item:nth-of-type(5n+1),
+  .max5 .grid-item:nth-of-type(5n+1),
+  .max4 .grid-item:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+@media only screen and (min-width: @grid-bp5) {
+/*
+  max6 becomes 6-column.
+*/
+  .max6 .grid-item {
+    width: 12.666%;
+  }
+  .max6 .grid-item:nth-of-type(5n+1) {
+    clear: none;
+  }
+  .max6 .grid-item:nth-of-type(6n+1) {
+    clear: left;
+  }
+}

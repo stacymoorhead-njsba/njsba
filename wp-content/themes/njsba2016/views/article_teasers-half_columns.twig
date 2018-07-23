@@ -1,0 +1,38 @@
+{% spaceless %}
+    
+<div class="container">
+      <section class="row{% if not_first %}{% else %} row--first{% endif %}">
+
+  {% for feed in feeds %}
+    <section class="home__col">
+      <h2>{{feed.heading}}</h2>
+
+      {% for post in feed.posts %}
+
+      <article class="article--teaser">
+        {% if post.tag %}
+          <p class="kicker">
+            <span class="label">
+              {{post.tag}}
+            </span>
+          </p>
+        {% endif %}{# if post.tag #}
+        <h3 class="title teaser__title"><a href="{{post.url}}">{{post.post_title}}</a></h3>
+        <p class="lesser">{{ post.post_date|date("F d, Y") }}</p>
+      </article>
+
+    {% endfor %} {# post in feed.posts #}
+      
+      {% if (feed.link_url) and (feed.link_txt) %}
+        <a class="" href="{{feed.link_url}}">
+          {{feed.link_txt}}
+        </a>
+      {% endif %}
+
+    </section>
+
+  {% endfor %} {# for feed in feeds #}
+
+</div>{# .container #}
+
+{% endspaceless %}

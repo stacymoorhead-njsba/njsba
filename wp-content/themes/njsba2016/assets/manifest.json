@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/responsive-nav.min.js",
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/styles.less"
+      ],
+      "main": true
+    },
+    "editor.css": {
+      "files": [
+        "styles/editor.less"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://localhost:8888/"
+  }
+}

@@ -1,0 +1,33 @@
+{% spaceless %}
+  
+  <section class="col--third">
+
+        <header class="section__header">
+          <h2><a href="{{button_url}}">{{heading}}</a></h2>
+        </header>
+        
+        {% for post in posts %}
+        <article class="article--teaser">
+
+
+
+          <h3 class="title teaser__title">
+
+            <a href="{{post.url}}">{{post.txt}}</a>
+
+          </h3>
+          
+          {% if post.date %}
+
+          <p class="lesser">{{post.date|date("F d, Y")}}</p>
+  
+          {% endif %}
+
+        </article>
+        {% endfor %}
+        
+        <a class="btn btn--small" href="{{button_url}}">{{button_text|default('Older Posts')}}</a>
+    
+  </section>
+
+{% endspaceless %}

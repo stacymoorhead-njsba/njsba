@@ -1,0 +1,53 @@
+{% spaceless %}
+
+  {% for people_section in people_sections %}
+
+    <section class="cards cards--people">
+
+      {% if people_section.heading %}
+        <header class="section__header">
+          <h2>{{people_section.heading}}</h2>
+        </header>
+      {% endif %}
+
+      {% for person in people_section.people %}
+
+      <div class="card card--contact card--neutral">
+
+        <div class="card__body">
+
+          {% if person.info_image_sizes_thumbnail %}
+          <div class="card__figure">
+            <img class="avatar" src="{{person.info_image_sizes_thumbnail}}" alt="{{person.post_title}}">
+          </div>
+          {% endif %}
+
+          <div class="card__text">
+            <h3 class="card__title"><a href="{{person.link_url}}">{{person.post_title}}</a></h3>
+            {% if person.info_position %}
+              <p>{{person.info_position}}</p>
+            {% endif %}
+          </div>
+
+        </div>
+        
+
+        <footer class="card__footer">
+          {% if person.info_email %}
+          <p class="card__footer__primary"><a href="mailto:{{person.info_email}}">{{person.info_email}}</a></p>
+          {% endif %}
+
+          {% if person.info_phone %}
+          <p class="card__footer__secondary">{{person.info_phone}}</p>
+          {% endif %}
+
+        </footer>
+
+      </div>
+      {% endfor %}
+      
+    </section>
+
+  {% endfor %}
+
+{% endspaceless %}

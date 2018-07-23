@@ -1,0 +1,115 @@
+.title--issue {
+  float: left;
+}
+
+.issue {
+  display: block;
+  clear: both;
+  margin-bottom: @baselineheight;
+  text-align: center;
+  > img {
+    display: block;
+    margin: 0 auto 6px;
+  }
+}
+
+.article--teaser {
+  .clearfix;
+  .margin-bottom(@basebottommargin);
+  p {
+    .margin-bottom(@basebottommargin/2);
+    &.kicker {
+      .margin-bottom(@basebottommargin/4);
+    }
+  }
+}
+
+// Some teasers are divided into teaser__figure and teaser__body, some are not
+.teaser__figure {
+  margin-bottom: @baselineheight/2;
+  > img {
+    width: 100%;
+  }
+}
+.teaser__body {
+  
+}
+
+@media only screen and (min-width: 48em) {
+  .teaser__figure,
+  .teaser__body {
+    float: left;
+  }
+  .teaser__figure {
+    width: 49%;
+    margin-right: 2%;
+  }
+  .teaser__body {
+    width: 49%;
+  }
+}
+
+.teaser__title {
+  .font-size(20);
+}
+
+.news__source {
+  .font-size(18);
+  text-transform: uppercase;
+}
+
+.article--full {
+  h2 {
+    .font-size(@h3size);
+  }
+  h3 {
+    .font-size(@h4size);
+  }
+  h4 {
+    .font-size(@h5size);
+  }
+}
+
+.article__sidebar {
+  background: @lightestneutralcolor;
+  padding: 1em;
+  margin-bottom: @baselineheight;
+  .font-size(14);
+  h2 {
+    .font-size(@h4size);
+  }
+  p, ul, ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 52em) {
+  .article__sidebar {
+    width: 40%;
+    float: right;
+    margin-left: @baselineheight;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .issue {
+    float: right;
+    clear: none;
+  }
+  .teaser__figure {
+    width: 59%;
+    margin-right: 2%;
+  }
+  .teaser__body {
+    width: 39%;
+  }
+}
+
+.article__footer {
+  border-top: 1px solid @bordercolor;
+  padding-top: @baselineheight;
+  .font-size(14);
+  font-style: italic;
+}

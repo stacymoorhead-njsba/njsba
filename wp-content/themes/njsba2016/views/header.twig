@@ -1,0 +1,49 @@
+{% spaceless %}
+<a href="#site-main" class="skip">Skip to main content</a>
+<header class="site-header">
+  
+  <div class="site-header__inner">
+  
+    <a href="{{logo_url}}" class="site-logo" title="NJSBA Home">
+    	{% include 'logo-svg.twig' %}
+    </a>
+    
+    <nav class="utility-nav">
+  
+      <button class="header-search__toggle" aria-label="Toggle Search Form"><i class="fa fa-search"></i> Search</button>
+      
+      {% if personify %}
+
+        {% if personify.login %}
+
+          <a class="header__login-link" href="{{personify.login}}">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Log In »
+          </a>
+          
+        {% else %}
+
+          {{ personify.logged_in }}
+
+        {% endif %}
+
+      {% endif %}{# if personify #}
+
+    </nav>
+    
+    
+	<button id="main-nav__toggle" aria-label="Toggle Main Navigation">Menu</button>
+  
+    <nav class="main-nav nav-collapse">
+     {{nav}}
+    </nav>
+    
+    {{search}}
+  
+  </div>
+
+</header>
+<script>
+  document.createElement('main');
+</script>
+
+{% endspaceless %}

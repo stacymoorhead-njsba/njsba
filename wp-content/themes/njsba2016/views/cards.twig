@@ -1,0 +1,43 @@
+{% spaceless %}
+
+{% if cards %}
+
+	<div class="cards cards--home">
+
+	  	{% for card in cards %}
+
+			<div class="card card--home">
+			    <div class="card__body">
+			    	{% if card.icon_url %}
+					<div class="card__figure">
+			        	<img class="nj-icon" src="{{card.icon_url}}" alt="">
+			      	</div>
+			      	{% endif %}
+			      <div class="card__text">
+
+			        <h2 class="title">
+			        	<a href="{{card.link_url}}">
+			        		{{card.heading}}
+			        	</a>
+			        </h2>
+
+			        <p>
+			        	{{card.subheading}}
+			        </p>
+
+			        <a href="{{card.link_url}}">
+			        	{{card.link_text}}
+			        </a>
+
+			      </div>
+			    </div>
+			</div>
+		
+		{% endfor %}
+
+	</div>
+
+{% endif %}
+
+{% endspaceless %}
+

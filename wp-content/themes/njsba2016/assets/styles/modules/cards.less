@@ -1,0 +1,249 @@
+// A dark background for some cards
+
+.cards {
+  padding: @baselineheight 5% 0;
+  .clearfix;
+}
+.cards--home {
+  background: @midneutralcolor url('../images/njsba-pattern-triangle.gif') repeat;
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    color: @white;
+  }
+}
+
+// Each individual card
+
+.card {
+  box-sizing: border-box;
+  max-width: 45em;
+  .margin-bottom(@basebottommargin);
+  color: @textcolor;
+  padding: @baselineheight/2;
+  h1, h2, h3, h4, h5, h6 {
+    color: @baseheadingfontcolor;
+  }
+}
+
+// Each .card must contain a .card__body and optionally a .card__footer
+
+.card__body {
+  background: @white;
+/*  display: flex;*/
+  .clearfix;
+  p, ol, ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card__body,
+.card__footer {
+  padding: @baselineheight/2;
+}
+
+// The .card__body must contain a .card__text and optionally a .card__figure
+
+.card__figure{
+  float: left;
+}
+
+.card__figure {
+  margin: 0 10px 0 0;
+  max-width: 9.375em;
+/*  flex-shrink: 0;*/
+}
+.card__text {
+/*  flex-grow: 1;*/
+ overflow: hidden;
+}
+
+.card__text--overflow_auto{
+  overflow: visible;
+}
+
+.card__title {
+  &:extend(.title);
+  .font-size(20);
+  font-weight: normal;
+}
+
+.card__subtitle {
+  &:extend(.title);
+  .font-size(16);
+  font-weight: normal;
+}
+
+.card__footer {
+  border-radius: 0 0 @borderradius @borderradius;
+  background: @blue;
+  .font-size(14);
+  color: @white;
+  .clearfix;
+  p {
+    margin-bottom: 0;
+  }
+  a {
+    color: @white;
+  }
+}
+
+.card__actions {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em 0 0;
+  li {
+    .font-size(16);
+    display: inline;
+    border-right: 1px solid @bordercolor;
+    padding-right: 5px;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.card__footer__primary,
+.card__footer__secondary {
+  box-sizing: border-box;
+  float: left;
+}
+
+.card__footer__primary {
+  padding-right: 1em;
+}
+
+.card__footer__secondary {
+  float: right;
+  padding-left: 1em;
+  text-align: right;
+}
+
+.card--event,
+.card--contact {
+//  max-width: 40em;
+  > .card__body {
+    p, ul, ol {
+      .font-size(14);
+      margin-bottom: 0.5em;
+    }
+    p.kicker {
+      .margin-bottom(@basebottommargin/4);
+    }
+  }
+}
+
+// Three cards on home page against dark background
+.card--home {
+  background: @white;
+  padding: @baselineheight/2 @baselineheight/4;
+}
+
+// A light grey card for white backgrounds
+.card--neutral .card__body {
+  background: @lightestneutralcolor;
+  .label {
+    background: @midneutralcolor;
+    color: @white;
+  }
+}
+
+// Event Cards
+.card--event {
+  padding: 0;
+  .card__title {
+    font-weight: bold;
+    margin-bottom: 0.35em;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.calendar-date {
+  display: block;
+  padding: 0.75em 3px;
+  background: @blue;
+  color: @white;
+  line-height: 1;
+  text-align: center;
+  width: 3.2em;
+  min-height: 2em;
+  border-radius: 4px;
+}
+.calendar-date__month {
+  display: block;
+  .font-size(11);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.calendar-date__date {
+  display: block;
+  .font-size(15);
+}
+
+// Contacts
+.card--contact {
+  padding: 0;
+}
+
+
+// FSR Search
+.fsr-search {
+  min-height: 10.5em;
+  position: relative;
+}
+.fsr-search__result {
+  display: block;
+}
+.card--hide {
+  display: none;
+}
+.card--show {
+  display: block;
+  .animate--flipInX;
+}
+
+
+// ************************************ MQS *******************************
+
+@media only screen and (min-width: 52em) {
+  .cards--home {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card--home {
+    flex-grow: 1;
+    flex-basis: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 30%;
+    float: left;
+  }
+  .cards--people > .card {
+    .halves();
+  }
+}
+
+@media only screen and (min-widht: 60em) {
+  .fsr-search__form,
+  .fsr-search__result {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .cards--people > .card {
+    .thirds();
+  }
+}

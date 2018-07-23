@@ -1,0 +1,35 @@
+{% spaceless %}
+<main id="site-main">
+<div class="hero hero--headerbg" style="background-image: url('{{image_sizes_large}}');">
+  <div class="hero__content">
+
+    {% if statement %}
+    <p class="hero__statement">{{statement}}</p>
+    {% endif %}
+
+    {% if announcement %}
+
+      <div class="container">
+
+        <div class="banner animate--fadeinup">
+          <div class="banner__text">
+            <p>{{announcement.text}}</p>
+          </div>
+          {% if (announcement.button_url) and (announcement.button_url) %}
+
+          <div class="banner__cta">
+            <a href="{{announcement.button_url}}" class="btn btn--inverse">
+              {{announcement.button_text}}
+            </a>
+          </div>
+
+          {% endif %}
+        </div>
+
+      </div>{# .container #}
+
+    {% endif %}
+
+  </div>
+</div>
+{% endspaceless %}

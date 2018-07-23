@@ -1,0 +1,45 @@
+@media-breakpoint: 30em;
+
+.media {
+  .margin-bottom(@basebottommargin);
+  display: block;
+  display: flex;
+  align-items: flex-start;
+}
+
+.media__figure {
+  display: table-cell;
+  vertical-align: top;
+  flex-shrink: 0;
+  padding-right: 1em;
+}
+
+.media__body {
+  display: table-cell;
+  vertical-align: top;
+  flex: 1;
+  & >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.media--center {
+  align-items: center;
+}
+
+.media--reverse {
+  flex-direction: row-reverse;
+  > .media__figure {
+    padding-right: 0;
+    padding-left: 1em;
+  }
+}
+
+@media only screen and (max-width: @media-breakpoint) {
+  .media {
+    display: block;
+    > .media__figure {
+      padding: 0 0 1em;
+    }
+  }
+}

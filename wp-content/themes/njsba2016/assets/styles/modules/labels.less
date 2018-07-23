@@ -1,0 +1,73 @@
+// LABELS AND BADGES ====================================================
+
+.label,
+.badge {
+  padding : 2px 5px;
+  .font-size(13);
+  font-family: @sansfont;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space : nowrap;
+  color : @badgecolor;
+  background-color : @badgebackground;
+}
+
+a.label,
+a.badge {
+  color: @linkcolor;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration : none;
+    color: @linkcolorhover;
+  }
+  &:visited {
+    color: @linkcolorvisited;
+  }
+}
+
+.label {
+  border-radius: 0;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+}
+
+.badge--danger {
+background-color : @dangercolor;
+color : @white;
+
+&:hover {
+background-color : darken(@dangercolor, 20%);
+color : @white; }
+}
+
+.badge--warning {
+background-color : @warningcolor;
+color : @white;
+
+&:hover {
+background-color : darken(@warningcolor, 20%);
+color : @white; }
+}
+
+.badge--success {
+background-color : @successcolor;
+color : @white;
+
+&:hover {
+background-color : darken(@successcolor, 20%);
+color : @white; }
+}
+
+.badge--info {
+background-color : @infocolor;
+color : darken(@infocolor, 50%);
+
+&:hover {
+background-color : darken(@infocolor, 20%); }
+}

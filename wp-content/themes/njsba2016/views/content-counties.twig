@@ -1,0 +1,83 @@
+<div class="container">
+  
+  <section class="row row--first">
+    
+<div class="col--primary">
+      <h2>Meetings</h2>
+      
+        <article class="card card--neutral card--event">
+          <div class="card__body">
+            <div class="card__figure">
+              <p class="calendar-date">
+                <span class="calendar-date__month">Jan</span>
+                <span class="calendar-date__date">8–10</span>
+              </p>
+            </div>
+            <div class="card__text">
+              <h3 class="card__title"><a href="">Governance I: New Board Member Orientation Weekend</a></h3>
+              <p><strong>When:</strong> January 8-10, 2016</p>
+              <p><strong>Where:</strong> Princeton Marriott Hotel and Conference Center<br>100 College Road East Princeton, NJ 08540</p>
+              <ul class="card__actions">
+                <li><a href="">Directions</a></li>
+                <li><a href="">Register</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        
+    </div>{# col--secondary #}
+   <div class="col--secondary">
+
+
+     {% for people_section in people_sections %}
+
+
+      {% if people_section.heading %}
+          <h2>{{people_section.heading}}</h2>
+      {% endif %}
+
+      {% for person in people_section.people %}
+
+      <div class="card card--contact card--neutral">
+
+        <div class="card__body">
+
+          {% if person.info_image_sizes_medium %}
+          <div class="card__figure">
+            <img class="avatar" src="{{person.info_image_sizes_thumbnail}}" alt="{{person.post_title}}">
+          </div>
+          {% endif %}
+
+          <div class="card__text">
+            <h3 class="card__title">{{person.post_title}}</h3>
+            {% if person.info_position %}
+              <p>{{person.info_position}}</p>
+            {% endif %}
+          </div>
+
+        </div>
+        
+
+        <footer class="card__footer">
+          {% if person.info_email %}
+          <p class="card__footer__primary">{{person.info_email}}</p>
+          {% endif %}
+
+          {% if person.info_phone %}
+          <p class="card__footer__secondary">{{person.info_phone}}</p>
+          {% endif %}
+
+        </footer>
+
+      </div>
+      {% endfor %}
+      
+
+  {% endfor %}
+
+      
+    </div>
+
+   </section>
+
+</div>

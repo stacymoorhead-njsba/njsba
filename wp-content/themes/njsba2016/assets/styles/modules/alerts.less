@@ -1,0 +1,65 @@
+// ALERT ====================================================
+
+.alert {
+	margin-bottom : @baselineheight;
+	padding : 8px 35px 8px 14px;
+	background-color : @alertcolor;
+	border : @alertborderwidth @alertborderstyle @alertbordercolor;
+	border-radius: @borderradius;
+	font-family : @basefont;
+	color : @alerttext;
+	.alert-heading {
+	  color : inherit;
+	}
+}
+
+.alert--success {
+  background-color : @alertsuccesscolor;
+  border-color : @alertsuccessborder;
+  color : @alertsuccesstext;
+}
+
+.alert--warning {
+  background-color : @alertwarningcolor;
+  border-color : @alertwarningborder;
+  color : @alertwarningtext;
+}
+
+.alert--danger {
+  background-color : @alertdangercolor;
+  border-color : @alertdangerborder;
+  color : @alertdangertext;
+}
+
+.alert--info {
+  background-color : @alertinfocolor;
+  border-color : @alertinfoborder;
+  color : @alertinfotext;
+}
+
+// alert block
+
+.alert--block {
+  padding-top : 14px;
+  padding-bottom : 14px;
+  .alert__heading {
+    margin-bottom : @baselineheight / 8;
+    font-size : inherit;
+    font-weight : bold;
+  }
+  > p,
+  > ul {
+    margin-bottom : 0;
+  }
+  p + p {
+    margin-top : 5px;
+  }
+}
+
+// Browser Upgrade alert (formerly Chrome Frame)
+.browserupgrade { 
+  margin : 0;
+  background : @alertwarningcolor;
+  color : @alertwarningtext;
+  padding : 0.5em 2.5%;
+}

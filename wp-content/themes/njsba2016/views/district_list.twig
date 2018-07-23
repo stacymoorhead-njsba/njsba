@@ -1,0 +1,38 @@
+{% spaceless %}
+  
+
+
+<div class="container">
+  
+  <h2>{{districts_heading}}</h2>
+  
+  <div class="css-columns">
+  
+      {% for county in counties %}
+
+        <h3>{{county.county}}</h3>
+
+        <ul class="list--plain">
+
+          {% for dist in county.district %}
+
+            <li>{{dist}}</li>
+
+          {% endfor %}
+
+
+        </ul>
+
+      {% endfor %}
+
+       
+
+    
+
+   
+  
+  </div>
+  
+</div>
+
+{% endspaceless %}

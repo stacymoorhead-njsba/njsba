@@ -1,0 +1,95 @@
+.site-footer {
+  padding: @baselineheight 5%;
+  background: @midneutralcolor;
+  color: @white;
+  .clearfix;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: @white;
+  }
+  a {
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: @linkcolor;
+    }
+  }
+  p,
+  ul,
+  ol,
+  dl,
+  address,
+  blockquote {
+    .font-size(14);
+  }
+}
+
+.footer__section {
+  
+}
+
+.footer__section__title {
+  .font-size(18);
+}
+
+.social-links {
+  &:extend(.list--plain);
+  margin-top: 1em;
+  li {
+    display: inline-block;
+    margin-right: 0.25em;
+    > a {
+      display: block;
+    }
+  }
+}
+
+#scroll-prompt {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 184px;
+  margin-left: -93px;
+  overflow: hidden;
+  
+  
+  .inner {
+    background: #44413A url(../images/njsba-pattern-triangle.gif) repeat;
+    border: 1px solid #000;
+    border-radius: 6px 6px 0 0;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.2em;
+    position: relative;
+    top: 0;
+    transition: top 400ms linear;
+  }
+  
+  .inner2 {
+    padding: 12px 35px 30px;
+    background: url(../images/down-arrow.png) no-repeat center 59px;
+    background-color: rgba(255, 255, 255, .15);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #scroll-prompt {
+    display: none !important;
+  }
+}
+
+#scroll-prompt.has-scrolled .inner {
+  transition: top 400ms linear;
+  top: 100px;
+}
+
+@media only screen and (min-width: 42em) {
+  .footer__section {
+    .thirds();
+  }
+}

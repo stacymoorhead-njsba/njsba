@@ -1,0 +1,12 @@
+    <nav class="pagination pagination--listing">
+
+    <ul>
+      {% if pagenation.prev %}
+          <li class="prev">{{pagenation.prev}}</li>
+      {% endif %}
+
+      {% if pagenation.next %}
+          <li class="next">{{pagenation.next}}</li>
+      {% endif %}
+    </ul>
+    </nav>

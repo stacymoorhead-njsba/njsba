@@ -1,0 +1,89 @@
+          <div class="fsr-search js_fsr_search">
+              <style class="js_fsr-search__css" data-replace="JS_REPLACE" data-parent="JS_ID">
+              /* Contact Cards */
+              #JS_ID .fsr-search__result[data-districts*="JS_REPLACE"]{
+                -webkit-transform: perspective(400px);
+                        transform: perspective(400px);
+                        opacity:1;
+                        }
+              #JS_ID .fsr-search__result[data-districts*="JS_REPLACE"]~[data-districts*="JS_REPLACE"]{
+                -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                        opacity:1;
+                        }
+
+              /* District Names */
+              #JS_ID .js_district{
+                opacity:0;
+                -webkit-transform:translateY(100%);
+                transform:translateY(100%);
+                visibility: hidden;
+                }
+
+              #JS_ID .js_district[class*="JS_REPLACE"]{
+                opacity:1;
+                -webkit-transform:translateY(0%);
+                transform:translateY(0%);
+                visibility: visible;
+                }
+
+                .fsr-search__result {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                          transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                  -webkit-transition: .25s;
+                  transition: .25s;
+                  opacity: 0;
+                }
+                .fsr-search__result .kicker {
+                  position: relative;
+                }
+                .fsr-search__district {
+                  display: inline-block;
+                  width: 100%;
+                }
+                .fsr-search__district + .fsr-search__district {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                }
+
+
+            </style>
+            <form class="card card--contact fsr-search__form js_fsr-search__form">
+              <div class="card__body">
+                <div class="card__text card__text--overflow_auto">
+                  <h3 class="card__title">Find Your FSR</h3>
+                  <label for="fsr-search__input">District Name</label>
+                  <div class="input-and-submit">
+                    <div class="awesomplete"><input type="text" class="js_fsr-search__input" autocomplete="off" aria-autocomplete="list">
+                      <ul hidden=""></ul><span class="visually-hidden" role="status" aria-live="assertive" aria-relevant="additions"></span></div>
+                    <button class="js_fsr-search__button" type="submit" class="btn btn--primary">Find</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class='js_contact_card card card--contact fsr-search__result'  data-districts=''>
+              <div class="card__body">
+                <div class="card__figure">
+                  <img class="avatar js_avatar" src="" alt=""/>
+                </div>
+                <div class="card__text">
+                  <p class="kicker js_kicker"></p>
+                  <p class="kicker"><button class="btn--link js-fsr_reset_button">Change District</button></p>
+                  <h3 class="card__title"><a href="fsr.html" class="js_link"></a></h3>
+                  <p class="js_position"></p>
+                </div>
+              </div>
+              <footer class="card__footer">
+                <p class="card__footer__primary js_primary"></p>
+                <p class="card__footer__secondary js_secondary"></p>
+              </footer>
+            </div>
+
+          </div>

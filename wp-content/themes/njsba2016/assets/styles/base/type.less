@@ -1,0 +1,90 @@
+/* Type Classes */
+
+.title {
+  line-height: 1.2;
+  .margin-bottom(@basebottommargin/4);
+  color: @blue;
+}
+.lesser {
+  color: @lightneutralcolor;
+  .font-size(14);
+  .margin-bottom(@basebottommargin/2);
+}
+.subhead {
+  .font-size(22);
+}
+.kicker {
+  .margin-bottom(@basebottommargin/4);
+}
+
+// Plain Lists
+.list--plain {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--links {
+  &:extend(.list--plain);
+  li {
+    margin-bottom: @baselineheight/2;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// horizontal definition lists
+.dl--horizontal {
+  dt {
+  float : left;
+  clear : left;
+  width : 20.25%;
+  text-align : right; }
+  
+  dd {
+  margin-left : 22.78%; } 
+}
+
+// blockquote
+.blockquote  { 
+  font-style: normal;
+  padding: 0 1em;
+  p,
+  .quote {
+    margin: 0 0 (@baselineheight/4);
+  }
+  .quote {
+    &:before {
+      content: '\201C';
+    }
+    &:after {
+      content: '\201D';
+    }
+  }
+  footer,
+  .attr {
+      &:before {
+      content:'\2014\00A0';
+    }
+  }
+}
+
+.pullquote {
+  box-sizing: border-box;
+  width: 100%;
+  margin: @baselineheight auto;
+  padding: 1em;
+  border: 1px solid @bordercolor;
+  border-style: solid none;
+  p {
+    font-style: normal;
+    .font-size(20);
+  }
+  footer {
+    p {
+      font-style: italic;
+      .font-size(14);
+      margin-bottom: 0;
+    }
+  }
+}

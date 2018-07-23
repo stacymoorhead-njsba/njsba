@@ -1,0 +1,36 @@
+<form id="js-meeting-filter__form">
+
+
+    <div class="form__item">
+      <label for="meeting-filter">Show:</label>
+      <select id="meeting-filter">
+        {% for option in options %}
+
+           <option value="{{option.link_url}}">
+            {{option.link_text}}
+          </option>
+
+        {% endfor %}
+        
+      </select>
+      <input type="submit" class="btn btn--small" value="Go">
+      <input type="reset" class="btn btn--small" value="Reset">
+    </div>
+    <script type="text/javascript">
+      if(document.getElementById('js-meeting-filter__form')){
+
+        var meeting_filter_form = document.getElementById('js-meeting-filter__form');
+        var meeting_filter = document.getElementById('meeting-filter');
+
+        meeting_filter_form.addEventListener("submit", function(){
+          
+          //prevent the form from firing off
+          event.preventDefault();
+            console.log(meeting_filter.value);
+            window.location.href = meeting_filter.value;
+          
+        });
+
+      }
+    </script>
+  </form>

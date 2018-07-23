@@ -1,0 +1,66 @@
+<main id="site-main">
+<header class="page-header">
+    
+  {% if breadcrumbs %}
+
+  {{breadcrumbs}}
+
+  {% endif %}
+  
+    <div class="media person">
+      {% if personal_info.image %}
+
+      <div class="media__figure">
+        <img class="avatar" src="{{personal_info.image}}" alt="">
+      </div>
+
+      {% endif %}
+      <div class="media__body">
+        <h1>{{post_title}}</h1>
+        {% if personal_info.position %}
+          <p>
+            {{personal_info.position}}
+          </p>
+        {% endif %}
+
+        <div class="col--third">
+          {% if (personal_info.phone) or (personal_info.email) %}
+          <h3>Contact</h3>
+          <p>
+            {{personal_info.email}}
+             {% if (personal_info.phone) and (personal_info.email) %}
+              </br>
+             {% endif %}
+            {{personal_info.phone}}
+          </p>
+          {% endif %}
+        </div>
+
+        {% if personal_info.counties_and_districts %}
+  
+          <div class="col--third">
+            <h3>Counties</h3>
+            <ul class="list--plain">
+
+          {% for county in personal_info.counties_and_districts %}
+              <li>{{county.county}}</li>
+          {% endfor %}
+
+            </ul>
+
+          </div>  
+          <div class="col--third">
+            <h3>Districts</h3>
+            <p>Listed below</p>
+          </div>
+
+
+
+
+        {% endif %}
+
+
+      </div>
+    </div>
+
+</header>

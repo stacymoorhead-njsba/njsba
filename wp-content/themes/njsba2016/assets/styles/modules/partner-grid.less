@@ -1,0 +1,42 @@
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: @baselineheight;
+  border-bottom: 1px solid @bordercolor;
+  margin-bottom: @baselineheight;
+  > .grid-item {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: @baselineheight;
+    text-align: center;
+    .font-size(14);
+    line-height: 1.3em;
+    img {
+      margin-bottom: @baselineheight/2;
+      display: inline-block;
+      clear: both;
+    }
+  }
+}
+
+.partner-tier1 {
+  > h2 {
+    .font-size(50);
+    text-transform: uppercase;
+    color: #372B4A;
+    background: #76D3FF;
+    padding: 0 0.25em;
+  }
+}
+
+.partner-tier2 {
+  > h2 {
+    .font-size(40);
+  }
+}
+
+.partner-tier3 {
+  > h2 {
+    .font-size(36);
+  }
+}

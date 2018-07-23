@@ -1,0 +1,93 @@
+{% spaceless %}
+
+</main><!-- /#site-main -->
+<footer class="site-footer">
+  <div class="footer__section">
+    <h2 class="footer__section__title">Contact Us</h2>
+    <address>
+      {% if name %}
+      <b>{{name}}</b>
+      {% endif %}
+      
+      <br>
+      {% if street %}
+        {{street}}
+      {% endif %}
+      
+      {% if (city) or (state) or (zip) %}
+      
+        <br>
+          {% if city %}
+            {{city}}
+          {% endif %} 
+
+          {% if (city and state) or (city and zip) %}
+            ,
+          {% endif %}
+
+          {% if state %}
+          {{state}}
+          {% endif %}
+
+          {% if zip %}
+            {{zip}}
+          {% endif %}
+
+      {% endif %}
+
+      {% if phone %}
+        <br>Main: {{phone}}
+      {% endif %}
+
+      {% if free_phone %}
+        <br>Free: {{free_phone}}
+      {% endif %}
+
+      {% if fax %}
+        <br>Fax: {{fax}}
+      {% endif %}
+
+    </address>
+
+
+
+    <ul class="social-links">
+      {% if teitter %}
+        <li><a href="{{twitter}}"><i class="fa fa-2x fa-twitter-square" aria-label="Twitter"></i></a></li>
+      {% endif %}
+
+      {% if facebook %}
+        <li><a href="{{facebook}}"><i class="fa fa-2x fa-facebook-square" aria-label="Facebook"></i></a></li>
+      {% endif %}
+
+      {% if youtube %}
+        <li><a href="{{youtube}}"><i class="fa fa-2x fa-youtube-square" aria-label="YouTube"></i></a></li>
+      {% endif %}
+    </ul>
+
+  </div>
+  {% if nav %}
+  <div class="footer__section">
+    <h2 class="footer__section__title">Quick Links</h2>
+
+    {{nav}}
+
+  </div>
+  {% endif %}
+  
+
+  {% if mission %}
+  <div class="footer__section">
+    <h2 class="footer__section__title">Mission Statement</h2>
+    <p>{{mission}}</p>
+  </div>
+  {% endif %}
+
+  <p class="clear"><small>© Copyright {{ "now"|date("Y") }} {{copyright}}</small></p>
+</footer>
+
+{% if fn('is_front_page') %}
+  <div id="scroll-prompt"><div class="inner"><div class="inner2">Scroll for more content</div></div></div>
+{% endif %}
+
+{% endspaceless %}

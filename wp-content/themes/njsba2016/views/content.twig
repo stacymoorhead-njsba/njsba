@@ -1,0 +1,32 @@
+{% spaceless %}
+<div class="container">
+	
+
+  <section class="row row--first">
+
+    <div class="col--primary">
+
+    {{content}}
+	{% if post_footer %}
+	<footer class="article__footer">{{post_footer}}</footer>
+	{% endif %}
+
+    </div>
+
+	<div class="col--secondary">
+		
+	    {% if find_your_fsr %}
+
+		<aside class="fsr-search">
+			
+			{% include 'fsr-widget.twig' %}
+		
+		</aside>
+
+		{% endif %}
+
+    </div>
+
+</div>
+
+{% endspaceless %}

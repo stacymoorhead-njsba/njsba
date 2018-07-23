@@ -1,0 +1,109 @@
+{
+    "fields": {
+        "280": {
+            "template": "",
+            "location": "sortable"
+        },
+        "23": {
+            "template": "assertive_content_feeds",
+            "location": "sortable"
+        },
+        "80": {
+            "template": "assertive_teasers",
+            "location": "top"
+        },
+        "98": {
+            "template": "banner",
+            "location": "top"
+        },
+        "5": {
+            "template": "",
+            "location": "sortable"
+        },
+        "51": {
+            "template": "content_feed",
+            "location": "bottom"
+        },
+        "13062": {
+            "template": "corporate_partners_grid",
+            "location": "sortable"
+        },
+        "4316": {
+            "template": "",
+            "location": "sortable"
+        },
+        "4318": {
+            "template": "",
+            "location": "sortable"
+        },
+        "60": {
+            "template": "hero",
+            "location": "top"
+        },
+        "68": {
+            "template": "hero",
+            "location": "top"
+        },
+        "93": {
+            "template": "hero",
+            "location": "top"
+        },
+        "104": {
+            "template": "",
+            "location": "top"
+        },
+        "106": {
+            "template": "page_teasers",
+            "location": "top"
+        },
+        "4322": {
+            "template": "",
+            "location": "sortable"
+        },
+        "27": {
+            "template": "people",
+            "location": "sortable"
+        },
+        "31": {
+            "template": "person",
+            "location": "sortable"
+        },
+        "75": {
+            "template": "hero",
+            "location": "sortable"
+        },
+        "41": {
+            "template": "",
+            "location": "sortable"
+        },
+        "43": {
+            "template": "",
+            "location": "sortable"
+        },
+        "45": {
+            "template": "",
+            "location": "sortable"
+        },
+        "48": {
+            "template": "",
+            "location": "sortable"
+        },
+        "87": {
+            "template": "cards",
+            "location": "top"
+        },
+        "5837": {
+            "template": "",
+            "location": "sortable"
+        },
+        "13074": {
+            "template": "",
+            "location": "sortable"
+        },
+        "content": {
+            "template": "content",
+            "location": "sortable"
+        }
+    },
+    "timestamp": 1484939722
+}

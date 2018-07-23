@@ -1,0 +1,65 @@
+{% spaceless %}
+<div class="container">
+	
+	{% if heading %}
+
+		<header class="section__header">
+	      <h3>{{heading}}</h3>
+	    </header>
+
+    {% endif %}
+	
+	<style>
+		.teaser__figure{
+			position: relative;
+		}
+
+		.teaser__figure img{
+			background-color: #eee;
+			position: absolute;
+				top:0;
+				right:0;
+				bottom:0;
+				left:0;
+			width:100%;
+			height:100%;
+		}
+	</style>
+	
+	<section class="row">
+      
+		{% for feature in features %}
+
+		    <article class="article--teaser">
+
+			{% if feature.image %}
+
+		      <a href="{{feature.url}}" class="teaser__figure">
+				<div class="teaser__image_fix" style="padding: {{feature.image.ratio}}% 0"></div>
+		        <img src="{{feature.image.src}}" alt="">
+		      </a>
+
+			{% endif %}
+
+		      <div class="teaser__body">
+
+		        <h4 class="title teaser__title">
+		        	<a href="{{feature.url}}">
+		        		{{feature.post_title}}
+		        	</a>
+		        </h4>
+
+		        <p>{{feature.post_excerpt}}</p>
+
+		      </div>
+		    </article>
+
+    	{% endfor %}
+        
+  </section>
+
+
+
+</div>
+{% endspaceless %}
+

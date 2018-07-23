@@ -1,0 +1,101 @@
+.banner {
+  margin: 0 0 @baselineheight;
+  padding: @baselineheight/2 5%;
+  background: @primarycolor;
+  color: @white;
+  .font-size(18);
+  border-radius: @borderradius;
+  .clearfix;
+}
+
+.banner + .banner {
+  margin-top: -@baselineheight;
+}
+
+.banner--full {
+  .font-size(21);
+  padding: @baselineheight*1.5 10%;
+  border-radius: 0;
+}
+
+.banner--blue {
+  background: @blue;
+  h1, h2, h3, h4, h5, h6, a {
+    color: @white;
+  }
+}
+
+// assertive teasers
+.banner--plain {
+  padding: @baselineheight 5%;
+  .font-size(18);
+  background: transparent;
+  color: @textcolor;
+  border-bottom: 1px solid @bordercolor;
+  border-radius: 0;
+  .banner__cta {
+    text-align: left;
+  }
+}
+
+.banner__media {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.banner__title {
+  .font-size(32);
+}
+
+.banner__cta {
+  text-align: center;
+  .font-size(@basefontsize);
+  h3 {
+    .font-size(@h4size);
+    margin-bottom: @baselineheight/4;
+    &:not(:first-child) {
+      margin-top: @basebottommargin/1em;
+      margin-top: @basebottommargin/1rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 52em) {
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: @baselineheight/1.5 2.5%;
+    p,
+    blockquote {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  }
+  .banner--full {
+    padding: @baselineheight*1.5 15%;
+  }
+  .banner--plain {
+    padding: @baselineheight 5%;
+  }
+  .banner__media {
+    float: left;
+    width: 8%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .banner__text {
+    float: left;
+    width: 72%;
+    margin-right: 2%;
+  }
+  .banner__media + .banner__text {
+    width: 58%;
+  }
+  .banner__cta {
+    float: right;
+    width: 26%;
+    margin-top: 0;
+  }
+}

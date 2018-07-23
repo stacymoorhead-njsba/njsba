@@ -1,0 +1,14 @@
+{% extends "content-1.twig" %}
+
+{% if row_first %}
+	{% set row_first = 'row--first' %}
+{% endif %}
+
+{% block col__primary_content %}
+	{{ include('list-links.twig') }}
+{% endblock %}
+
+{# {% block col__secondary_content %} #}
+{% block col__secondary %}
+
+{% endblock %}

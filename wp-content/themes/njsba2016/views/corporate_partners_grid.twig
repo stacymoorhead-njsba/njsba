@@ -1,0 +1,31 @@
+{% spaceless %}
+
+{% if corporate_partners_grid %}
+	<div class="container">	
+	  	
+	  	{% set startCounter = 1 %}
+
+	  	{% for section in corporate_partners_grid %}
+	  	
+	  	{% set myCounter = startCounter + loop.index0 %}
+	  	<div class="partner-tier{{ myCounter }}">
+	  	  <h2>{{ section.section_header }}</h2>
+	  		<div class="logo-grid grid-container min2 max5">
+				{% for partner in section.corporate_partner %}
+					<div class="grid-item">
+						<a href={{ partner.corporate_partner_link_url }} target=_blank>
+							<img src={{ partner.corporate_partner_logo}} class="size-full" alt="{{ partner.corporate_partner_link_text }}">
+							<br>
+							{{ partner.corporate_partner_link_text }}
+						</a>
+					</div>
+				{% endfor %}
+        </div>
+			</div>
+		{% endfor %}
+		
+
+	</div>
+{% endif %}
+
+{% endspaceless %}

@@ -1,0 +1,24 @@
+{% spaceless %}
+	
+
+<section class="col--third">
+      <header class="section__header">
+        <h2>
+        	<a href="{{link_url}}">
+        		{{heading}}
+        	</a>
+        </h2>
+      </header>
+      <p>
+      	{{explanation_text}}
+      </p>
+      
+      <a class="btn btn--small" href="{{button_url}}">
+		  {{button_text|default('Older Posts')}}
+      </a>
+      
+</section>
+
+{% endspaceless %}
+
+

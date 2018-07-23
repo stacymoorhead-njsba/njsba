@@ -1,0 +1,17 @@
+
+{% if heading %}
+	<h2>{{heading}}</h2>
+{% endif %}
+
+
+
+	
+	<ul class="list--links">
+			{% for link in links %}
+
+	        <li>
+	        	<a href="{{link.url}}">{{link.post_title}}</a>
+	        </li>
+
+	    	{% endfor %}
+	</ul>

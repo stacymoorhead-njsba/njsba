@@ -1,0 +1,76 @@
+{% spaceless %}
+
+  	{# 
+		
+		First go at importing twig templates
+			*hence the -1 in the file name*
+
+  	 #}
+	
+	{% if container %}
+		<div class="container">
+  	{% endif %}
+	
+	{% if section %}
+
+		<{{section}} class="{{section__class}}">
+
+	{% else %}
+
+		<section class="row {{row_first}}">
+
+	{% endif %}
+	
+	{# PRIMARY COLUMN #}
+		{% block col__primary %}
+		    <div class="col--primary">
+			
+				{% block col__primary_content %}
+					{{content}}
+
+					{% if post_footer %}
+					<footer class="article__footer">{{post_footer}}</footer>
+					{% endif %}
+
+				{% endblock %}{# col__primary_content #}	
+
+		    </div>
+	    {% endblock %}{# col__primary #}
+
+	{# SECONDARY COLUMN #}
+		{% block col__secondary %}
+			<div class="col--secondary">
+
+				{% block col__secondary_content %}
+
+					{{secondary_content}}
+
+				{% endblock %}
+
+				{% if find_your_fsr %}
+
+					{% include 'fsr-widget.twig' %}
+
+				{% endif %}
+
+			</div>
+		{% endblock %}{# col__secondary #}	
+
+  	
+
+	{% if section %}
+	
+		</{{section}}>
+
+	{% else %}
+
+		</section>
+
+	{% endif %}
+
+
+	{% if container %}
+		</div>
+  	{% endif %}
+
+{% endspaceless %}

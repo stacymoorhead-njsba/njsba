@@ -1,0 +1,24 @@
+{% spaceless %}
+
+<div class="container">
+  <div class="row{% if not_first %}{% else %} row--first{% endif %}">
+
+    {% for teaser in page_teasers %}
+
+      <div class="section-teaser">
+        <h2>
+          <a href="{{teaser.link_url}}">{{teaser.heading}}</a>
+        </h2>
+        <p>{{teaser.text}}</p>
+        <a href="{{teaser.link_url}}">
+          {{teaser.link_text}}
+        </a>
+      </div>
+
+    {% endfor %}
+  
+
+  </div>
+</div>
+
+{% endspaceless %}

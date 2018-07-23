@@ -1,0 +1,39 @@
+{% spaceless %}
+  
+{% for teaser in assertive_teasers %}
+
+  <div class="banner banner--plain">
+    
+    {% if teaser.icon.src %}
+
+      <div class="banner__media">
+        <img src="{{teaser.icon.src}}" alt="teaser.icon.alt">
+      </div>
+
+    {% endif %}
+
+    <div class="banner__text">
+      
+      <h2 class="banner__title">{{teaser.heading}}</h2>
+      <p>{{teaser.subheading}}</p>
+
+    </div>
+
+    {% if teaser.buttons %}
+      <div class="banner__cta">
+        {% for btn in teaser.buttons %}
+
+          <p>
+            <a href="{{btn.link}}" class="btn btn--small">{{btn.text}}</a>
+          </p>
+
+        {% endfor %}          
+
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endfor %}
+
+{% endspaceless %}

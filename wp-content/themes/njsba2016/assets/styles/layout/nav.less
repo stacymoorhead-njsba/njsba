@@ -1,0 +1,286 @@
+/* Navigation */
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav {
+  li {
+    .font-size(18);
+  }
+}
+
+// dropdown/second-level main nav
+.main-nav ul > li > ul {
+  > li > a {
+    padding-left: 2em;
+  }
+  
+}
+
+// this is the block of nav that's inside the page header; not the dropdown menu
+.subnav {
+  background: @white;
+  padding: 3px;
+  clear: both;
+  ul {
+    border-radius: @borderradius;
+    overflow: hidden;
+  }
+  
+  li {
+    border-bottom: 1px solid @white;
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      display: block;
+      background: @lighterblue;
+      color: @darkblue;
+      > img {
+        margin: 0.5em auto 0;
+        display: block;
+        position: relative;
+        }
+    }
+  }
+}
+
+.subnav__title {
+  &:extend(.card__title);
+  padding: .5em 16px;
+  margin-bottom: 0;
+}
+
+// Links
+.main-nav li > a,
+.subnav li > a {
+  float: none;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  position: relative;
+//  transition: all .1s linear;
+}
+
+.main-nav li > a {
+  color: @navLinkColor;
+}
+
+// Hover
+.main-nav li > a:focus,
+.main-nav li > a:hover {
+  text-decoration: none;
+  background-color: @navLinkBackgroundHover;
+  color: @darkneutralcolor;
+}
+
+.subnav li > a:focus,
+.subnav li > a:hover {
+  text-decoration: none;
+  background-color: @navLinkBackgroundHover;
+  color: @darkneutralcolor;
+}
+
+// Current nav items
+.main-nav .current > a,
+.main-nav .current > a:hover,
+.main-nav .current > a:focus {
+  &:after {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    color: @lightblue;
+  }
+}
+
+// Utility Nav (Search & Log In)
+.utility-nav {
+  box-sizing: border-box;
+  float: right;
+  padding-right: 1em;
+  text-align: right;
+}
+
+.header-search__toggle,
+#main-nav__toggle {
+  display: none;
+  visibility: hidden;
+}
+.js .header-search__toggle {
+  display: inline-block;
+  visibility: visible;
+}
+
+.header-search__toggle,
+.header__login-link,
+#main-nav__toggle {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  .font-size(16);
+  line-height: @baselineheight;
+  background: transparent;
+  color: @linkcolor;
+  border: none;
+  border-radius: 0;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: @navLinkBackgroundHover;
+    color: @darkneutralcolor;
+  }
+}
+
+.header__login-link {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+}
+
+/*! responsive-nav.js 1.0.40 by @viljamis */
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.nav-collapse .dropdown.opened > ul {
+  position: relative;
+}
+
+#main-nav__toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  user-select: none;
+  display: inline-block;
+  margin-left: 1em;
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f0c9";
+    margin-right: 0.25em;
+  }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .js .nav-collapse {
+    width: 100%;
+    overflow: hidden;
+  }
+  .js #main-nav__toggle {
+    display: inline-block;
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .main-nav {
+    text-align: center;
+  }
+  .main-nav li {
+    display: inline-block;
+    .font-size(18);
+    position: relative;
+  }
+  .main-nav li > a:focus,
+  .main-nav li > a:hover {
+//    border-radius: @borderradius;
+  }
+  .main-nav .current > a,
+  .main-nav .current > a:hover,
+  .main-nav .current > a:focus {
+    &:after {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      margin-left: -0.15em;
+    }
+  }
+  
+  .main-nav ul > li > ul {
+    display: none;
+    position: absolute;
+    width: 14em;
+    text-align: left;
+    > li {
+      display: block;
+      > a {
+        background: @navLinkBackgroundHover;
+        color: @darkneutralcolor;
+        padding-left: 1em;
+        &:hover,
+        &:focus {
+          background: @darkblue;
+          color: @white;
+        }
+      }
+    }
+  }
+  .main-nav ul > li:last-child > ul {
+    right: 0;
+  }
+  .main-nav ul > li {
+    &:hover,
+    &:focus {
+      > ul {
+        display: block;
+      }
+      a {
+        background-color: @navLinkBackgroundHover;
+        color: @darkneutralcolor;
+      }
+    }
+  }
+  
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed,
+  .js .nav-collapse.closed .dropdown ul {
+    max-height: none;
+  }
+  #main-nav__toggle {
+    display: none;
+  }
+  
+  .header__login-link {
+    margin-left: 12px;
+  }
+  
+}
+
+
+// Breadcrumbs
+
+.breadcrumb {
+  .font-size(13);
+  color: @lighterneutralcolor;
+  margin-left: -0.35em;
+  .margin-bottom(@basebottommargin);
+  li {
+    display: inline-block;
+    margin-left: 0.35em;
+    &:after {
+      /* forward slashes */
+      /* content: '\2044'; */
+      /* 'greater than' signs */
+      content: '\003E';
+    }
+    &:last-child:after {
+      content: '';
+    }
+    a {
+    margin-right: 0.65em;
+    }
+  }
+}

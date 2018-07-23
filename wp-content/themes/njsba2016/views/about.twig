@@ -1,0 +1,22 @@
+{% spaceless %}
+	{% if text %}
+
+		<footer class="publication-footer">
+		  <div class="container">
+			
+			{% if heading %}
+				
+		    <h2>{{heading}}</h2>
+		    {% endif %}
+		    <div class="col--primary">
+			
+			{{text}}
+			
+		    </div>
+
+		  </div>
+		</footer>
+
+	{% endif %}
+
+{% endspaceless %}

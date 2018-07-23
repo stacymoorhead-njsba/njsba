@@ -1,0 +1,220 @@
+/* Buttons =================================================== */
+
+.btn {
+	display : inline-block;
+	padding : 10px 15px 9px;
+	margin-bottom : 0;
+	font-family : @basefont;
+	font-size: 87.5%;
+	font-weight: bold;
+	line-height : (@baselineheight*.75);
+	color : @buttoncolor;
+	text-transform: uppercase;
+	text-align : center;
+	vertical-align : middle;
+	background-color : @buttonbackground;
+	border : @buttonborderwidth @buttonborderstyle @buttonbordercolor;
+	border-radius: @buttonborderradius;
+	cursor : pointer;
+	*margin-left : .3em;
+	transition: all .1s linear;
+	
+	&:visited,
+	&:hover,
+	&:focus {
+  	color : @buttoncolor;
+  	text-decoration : none;
+	}
+	
+	&:hover,
+	&:focus {
+	  background-color: @buttonbackgroundhover;
+	  color: @buttoncolorhover;
+	}
+	
+	small {
+  	font-weight: normal;
+  	line-height: 1;
+	}
+}
+
+.btn:first-child {
+  *margin-left : 0;
+}
+
+// disabled
+.btn--disabled {
+  opacity: .5;
+  cursor : default;
+}
+
+// button that looks like a link
+.btn--link {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: @linkcolor;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: normal;
+  vertical-align: baseline;
+  &:visited {
+    color: @linkcolorvisited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent;
+    color: @linkcolorhover;
+    text-decoration: underline;
+  }
+}
+
+// primary
+.btn--primary {
+/*
+  background-color: @primarycolor;
+  color: @primarycolorcontrast;
+  &:visited,
+  &:hover,
+  &:focus {
+    color : @primarycolorcontrast;
+  }
+  &:hover,
+  &:focus {
+    background-color: @lightblue;
+    border-color: @lightblue;
+  }
+*/
+}
+
+// lesser
+.btn--lesser {
+  background-color: @lightgrey;
+  &:hover,
+  &:focus {
+    background-color: @grey;
+    border-color: @grey;
+  }
+}
+
+// alternate
+.btn--alt {
+  border-color: @lightblue;
+  color: @lightblue;
+  &:visited,
+  &:hover,
+  &:focus {
+    color : @lightblue;
+  }
+  &:hover,
+  &:focus {
+    background-color: @lightblue;
+    color: @white;
+  }
+}
+
+// inverse
+.btn--inverse {
+  border-color: @white;
+  color: @white;
+  &:visited,
+  &:hover,
+  &:focus {
+    color : @white;
+  }
+  &:hover,
+  &:focus {
+    background-color: @white;
+    color: @primarycolor;
+  }
+}
+
+// sizes
+
+.btn--extlarge {
+  padding : 20px 35px;
+  .font-size(@basefontsize*1.25);
+}
+
+.btn--large {
+  padding : 15px 25px;
+  .font-size(@basefontsize*1.1);
+}
+
+.btn--small,
+button.btn--small,
+input[type="button"].btn--small,
+input[type="reset"].btn--small,
+input[type="submit"].btn--small {
+  padding : 7px 10px 6px;
+  .font-size(14);
+}
+
+.btn--mini {
+  padding : 4px 5px 3px;
+  .font-size(11);
+  font-weight: normal;
+}
+
+// button groups and toolbars
+
+.btn-group {
+  position : relative;
+  *zoom : 1;
+  *margin-left : .3em;
+  margin-bottom : @baselineheight;
+}
+
+.btn-group .btn {
+  position : relative;
+  float : left;
+  margin-left : -1px;
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  margin-left : 0;
+  border-radius: @buttonborderradius 0 @buttonborderradius 0;
+} 
+
+.btn-group .btn:last-child {
+  border-radius: 0 @buttonborderradius 0 @buttonborderradius;
+}
+
+.btn-toolbar {
+  clear : both;
+  margin-top : @baselineheight / 2;
+  margin-bottom : @baselineheight / 2;
+}
+
+.btn-toolbar .btn-group {
+  display : inline-block;
+  *display : inline;
+  *zoom : 1;
+}
+
+// Block button
+
+.btn--block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+// Vertically space out multiple block buttons
+.btn--block + .btn--block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn--block {
+    width: 100%;
+  }
+}
