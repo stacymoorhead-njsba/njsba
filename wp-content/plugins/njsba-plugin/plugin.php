@@ -23,6 +23,8 @@ $plugin_includes = array(
 	'post_type-people',
 	'post_type-webinars',
  	'taxonomy-webinars',
+	'post_type-jobs',
+	'taxonomy-jobs',
 	'support-svg',
 	'taxonomy-event_categories',
 	//'taxonomy-issues',
