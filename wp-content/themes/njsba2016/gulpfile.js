@@ -285,8 +285,8 @@ gulp.task('wiredep', function() {
 
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
-//gulp.task('default', ['clean'], function() {
-//  gulp.start('build');
-//});
+gulp.task('default', ['clean'], function() {
+  gulp.start('build');
+});
 // Default task (runs at initiation: gulp --verbose)
-gulp.task('default', ['watch']);
+//gulp.task('default', ['watch']);

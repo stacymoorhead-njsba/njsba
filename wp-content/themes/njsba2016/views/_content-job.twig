@@ -1,0 +1,23 @@
+{% spaceless %}
+<div class="container">
+	
+
+  <section class="row row--first">
+
+    <div class="col--primary">
+
+    {{content}}
+	{% if post_footer %}
+	<footer class="article__footer">{{post_footer}}</footer>
+	{% endif %}
+
+    </div>
+
+	<div class="col--secondary">
+
+
+    </div>
+
+</div>
+
+{% endspaceless %}
