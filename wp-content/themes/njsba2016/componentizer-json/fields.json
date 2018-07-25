@@ -48,6 +48,10 @@
             "template": "hero",
             "location": "top"
         },
+        "52833": {
+            "template": "hero",
+            "location": "sortable"
+        },
         "52755": {
             "template": "",
             "location": "sortable"
@@ -109,5 +113,5 @@
             "location": "sortable"
         }
     },
-    "timestamp": 1532548348
+    "timestamp": 1532549621
 }
