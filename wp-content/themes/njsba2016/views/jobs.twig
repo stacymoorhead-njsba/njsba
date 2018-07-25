@@ -1,0 +1,53 @@
+{% spaceless %}
+
+  {% for jobs_section in jobs_sections %}
+
+    <section class="cards cards--jobs">
+
+      {% if jobs_section.heading %}
+        <header class="section__header">
+          <h2>{{jobs_section.heading}}</h2>
+        </header>
+      {% endif %}
+
+      {% for job in jobs_section.jobs %}
+
+      <div class="card card--contact card--neutral">
+
+        <div class="card__body">
+
+          {% if job.info_image_sizes_thumbnail %}
+          <div class="card__figure">
+            <img class="avatar" src="{{job.info_image_sizes_thumbnail}}" alt="{{job.post_title}}">
+          </div>
+          {% endif %}
+
+          <div class="card__text">
+            <h3 class="card__title"><a href="{{job.link_url}}">{{job.post_title}}</a></h3>
+            {% if job.info_position %}
+              <p>{{job.info_position}}</p>
+            {% endif %}
+          </div>
+
+        </div>
+        
+
+        <footer class="card__footer">
+          {% if job.info_email %}
+          <p class="card__footer__primary"><a href="mailto:{{job.info_email}}">{{job.info_email}}</a></p>
+          {% endif %}
+
+          {% if job.info_phone %}
+          <p class="card__footer__secondary">{{job.info_phone}}</p>
+          {% endif %}
+
+        </footer>
+
+      </div>
+      {% endfor %}
+      
+    </section>
+
+  {% endfor %}
+
+{% endspaceless %}

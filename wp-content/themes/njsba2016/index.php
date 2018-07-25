@@ -23,6 +23,10 @@
 
 		Components\build_with( get_queried_object(),'person');
 
+	}elseif( $suffixes[0] == 'single-job' ){
+
+		Components\build_with( get_queried_object(),'job');	
+
 	}elseif( $suffixes[1] == 'archive' || $suffixes[1] == 'paged' && $suffixes[2] == 'archive' || $suffixes[0] == 'publication'){
 
 
