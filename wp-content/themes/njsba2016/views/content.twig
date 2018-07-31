@@ -25,32 +25,8 @@
 
 		{% endif %}
 		
-		{% for post in jobs %}
 
-			{#% include 'job-details.twig' %#}
-			<h3>Job Overview</h3>
-			<div>
-				{{job_map}}
-			</div>
-			<div class="job-detail">
-				<div><strong>Closes::</strong></div>
-				<div>{{job_closes}}</div>
-			</div>
-			<div class="job-detail">
-				<div><strong>Location:</strong></div>
-				<div>{{job_location}}</div>
-			</div>
-			<div class="job-detail">
-				<div><strong>Job Title:</strong></div>
-				<div>{{job_title}}</div>
-			</div>
-			<div class="job-detail">
-				<div><strong>Contact:</strong></div>
-				<a href="mailto:{{job_contact}}"</a>
-			</div>
-			<a class="btn btn--primary" href="{{application_link}}">Apply</a>
-
-		{% endfor %}
+			{% include 'job-details.twig' %}
 
     </div>
 

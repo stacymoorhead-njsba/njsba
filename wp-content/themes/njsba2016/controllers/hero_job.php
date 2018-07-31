@@ -69,8 +69,7 @@ if(in_the_loop()==true && empty($context['title'])){
 		
 	}
 	
-	$context = get_field( 'job_details' );
-	$context['job_image'] = $job_details[0]['job_image'];
+
 	
 }
 

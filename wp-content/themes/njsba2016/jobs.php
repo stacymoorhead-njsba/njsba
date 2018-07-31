@@ -81,10 +81,16 @@ if($wp_query->have_posts()) {
     	}
     	*/?>
 		
-    	<?php if(get_field('job_image')) {
-	    	echo '<div class="webinar__figure"><img src="' . get_field('job_image') . '" class="webinar__img"></div>';
-    	}
-    	?>
+		<?php if( get_field('job_image') ): ?>
+
+			<div class="webinar__figure">	
+				<img src="<?php the_field('job_image'); ?>" class="webinar__img" />
+			</div>
+
+		<?php endif; ?>
+
+		
+
     	<div class="job__body">
       	<h3 class="title"><a href="<?php echo esc_url( get_permalink() ) ?>"><?php the_title(); ?></a></h3>
       	<p class="subhead"><?php the_field('location'); ?></p>

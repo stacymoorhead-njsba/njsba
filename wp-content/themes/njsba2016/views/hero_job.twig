@@ -107,12 +107,9 @@
         {% endif %}
 		
 		
-		{% for item in post.get_field('job_image') %}
-			 {% if job_image %}
-			  {#<img class="article__post-image" src="{{job_image}}" alt="">#}
-			  <img class="article__post-image" src="{{TimberImage(post.get_field('job_image')).src}}" />
-			{% endif %}
-		{% endfor %}	
+		{% if post.job_image %}
+			<img class="job-image" src="{{post.job_image}}" />
+		{% endif %}
 		
 		{#{% if post.thumbnail %}
 			<img class="article__post-image" src="{{ post.thumbnail.src('medium' }}" alt="">

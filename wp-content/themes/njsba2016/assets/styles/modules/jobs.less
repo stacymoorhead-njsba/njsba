@@ -23,6 +23,42 @@
   font-weight: bold;
 }
 
+.job-image {
+	float: right;
+	max-height: 300px;
+}
+
+.job-detail {
+	width: 100%;
+	clear: both;
+	margin: .5em auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	.clearfix;
+
+}
+
+.job_text {
+	width: auto;
+	float: left;
+}
+
+.job_icon {
+	width: 50px;
+	color: @green;
+	float: left;
+	margin-right: .5em;
+}
+
+.apply {
+	margin-top: 1em;
+	text-align: center;
+	width: 100%;
+}
+
 @media only screen and (min-width: 37.5em) {
   .job {
     display: flex;

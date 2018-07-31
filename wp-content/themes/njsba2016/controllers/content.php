@@ -30,23 +30,12 @@ if(!empty($context['content'])){
 	}//elseif end
 
 	/*SIDEBAR*/
+	
 
 	if ($sidebar = get_field('sidebar')) {
 		$context['find_your_fsr'] = $sidebar[0]['find_your_fsr'];
 	}
-	
-	/*JOB PAGE DETAILS*/
-	if ($job_details = get_field('job_map')) {
-		$context['job_map'] = $job_details[0]['job_map'];
-	}
-	
-	if ($job_details = get_field('job_details')) {
-		$context['job_closes'] = $job_details[0]['job_closes'];
-		$context['job_location'] = $job_details[0]['job_location'];
-		$context['job_title'] = $job_details[0]['job_title'];
-		$context['job_contact'] = $job_details[0]['job_contact'];
-		$context['application_link'] = $job_details[0]['application_link'];
-	}	
+		
 
 
 	Timber::render('content.twig', $context);
