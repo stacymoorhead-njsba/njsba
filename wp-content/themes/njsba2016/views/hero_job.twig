@@ -1,0 +1,151 @@
+{% spaceless %}
+<main id="site-main">
+<header class="page-header{% if cover_image %} page-header--has-image{% endif %}">
+
+    {% if breadcrumbs %}
+      
+      {{breadcrumbs}}
+
+    {% endif %}
+    
+    <div class="page-header__primary">
+
+      <h1 class="title">
+        {{title}}
+      </h1>
+
+      {% if byline %}
+        <p class="byline">{{byline}}</p>
+      {% endif %}
+
+      {% if deck %}
+
+        <p class="subhead">
+          {{deck}}
+        </p>
+
+      {% endif %}
+    </div>
+    
+
+    <aside class="page-header__secondary">
+      {# CONTACT #}
+      
+        {% if contact %}
+
+          <article class="card card--contact">
+
+            <div class="card__body">
+
+              <h3 class="title card__title"><a href="{{contact.link_url}}">{{contact_text}}</a></h3>
+
+            </div>
+
+
+            
+            <footer class="card__footer">
+              {% if contact.email %}
+                <a href="mailto:{{contact.email}}" class="card__footer__primary">{{contact.email}}</a>
+              {% endif %}
+              {% if contact.phone %}
+
+                 <p class="card__footer__secondary">{{contact.phone}}</p>
+
+              {% endif %}
+            </footer>
+
+          </article>
+
+        {% endif %}
+      
+      {# NAVIGATION #}
+
+        {% if navigation %}
+
+          <nav class="subnav">
+            <ul class="nav">
+
+              {% if navigation_heading %}
+              <h3 class="subnav__title">
+                {{navigation_heading}}
+              </h3>
+              {% endif %}
+              
+              {% for nav in navigation %}
+
+              <li>
+                <a href="{{nav.sub_nav_link_url}}">
+                  {{nav.sub_nav_link_text}}
+                </a>
+              </li>
+
+              {% endfor %}
+
+            </ul>
+
+          </nav>
+
+        {% endif %}
+        
+        {# FSR SEARCH #}
+
+        {% if find_your_fsr %}
+
+          {% include 'fsr-widget.twig' %}
+
+        {% endif %}
+
+        {% if (pdf_link) and (cover_image) %}
+
+            <a class="issue" href="{{pdf_link}}"><img src="{{cover_image}}" alt=""> Current Issue</a>
+
+        {% endif %}
+        
+
+        {% if image_sizes_medium %}
+          <img class="article__post-image" src="{{image_sizes_medium}}" alt="">
+        {% endif %}
+		
+		
+		{% for item in post.get_field('job_image') %}
+			 {% if job_image %}
+			  {#<img class="article__post-image" src="{{job_image}}" alt="">#}
+			  <img class="article__post-image" src="{{TimberImage(post.get_field('job_image')).src}}" />
+			{% endif %}
+		{% endfor %}	
+		
+		{#{% if post.thumbnail %}
+			<img class="article__post-image" src="{{ post.thumbnail.src('medium' }}" alt="">
+		{% endif %}#}
+
+
+    </aside>
+
+</header>
+
+
+
+{% if subheader %}
+  <div class="container">
+
+            <h2>{{subheader.subheading}}</h2>
+
+            {% if subheader.pdf %}
+
+              <a class="issue" href="{{subheader.pdf}}">
+                {% if subheader.pdf_image %}
+
+                  <img src="{{subheader.pdf_image}}" alt=""> 
+
+                {% endif %}
+                Current Issue PDF
+              </a>
+
+            {% endif %}
+    
+    </div>
+{% endif %}
+
+
+
+{% endspaceless %}

@@ -76,6 +76,11 @@ if($wp_query->have_posts()) {
     $wp_query->the_post();
     ?>
     <article class="job">
+    	<?php /* if(has_post_thumbnail()) {
+	    	echo '<div class="webinar__figure">' . the_post_thumbnail('medium', array('class' => 'webinar__img')) . '</div>';
+    	}
+    	*/?>
+		
     	<?php if(get_field('job_image')) {
 	    	echo '<div class="webinar__figure"><img src="' . get_field('job_image') . '" class="webinar__img"></div>';
     	}

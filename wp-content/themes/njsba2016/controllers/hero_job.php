@@ -69,21 +69,9 @@ if(in_the_loop()==true && empty($context['title'])){
 		
 	}
 	
-	//Job IMAGE
-	$job_image ='';
-
-	if(isset($context['job_image']) ){
-
-		$job_image = $context['job_image']['sizes']['medium'];
-
-	}
-
-	$context = get_field( 'hero', $context['acf_arg'] )[0];
-
-	$context['job_image'] = $job_image;
-
-	$context['title'] = $title;
-
+	$context = get_field( 'job_details' );
+	$context['job_image'] = $job_details[0]['job_image'];
+	
 }
 
 //navigation

@@ -1,0 +1,30 @@
+{% spaceless %}
+
+     	{% if job.map%}
+          <div class"map">{{map}}</div>
+        {% endif %}
+		
+		<div class"gray_bg">
+			<h3>Job Overview</h3>
+			{% if job_closes %}
+			  <div class="job-details"{{job_closes}}</div>
+			{% endif %}
+			
+			{% if location %}
+			  <div class="job-details"{{location}}</div>
+			{% endif %}
+			
+			{% if job_title %}
+			  <div class="job-details"{{job_title}}</div>
+			{% endif %}	
+			
+			{% if job_contact %}
+			  <div class="job-details"{{job_closes}}</div>
+			{% endif %}
+			
+			{% if job_application_link %}
+			  <a class="btn btn--primary" href="{{job_application_link}}">Apply Now</a>
+			{% endif %}				
+		</div>
+
+{% endspaceless %}
