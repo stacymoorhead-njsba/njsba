@@ -45,10 +45,6 @@ $args = array(
 	'post_type' => 'jobs',
 	'posts_per_page' => 6,
 	'paged' => $paged,
-    'meta_key' => 'location',
-    'meta_type' => 'Text',
-	'orderby' => 'meta_value',
-	'order' => 'DESC',
 );
 
 if( isset($_GET["category"]) ){
@@ -67,7 +63,6 @@ if( isset($_GET["category"]) ){
 }
 
 $wp_query = new WP_Query($args);
-
 if($wp_query->have_posts()) {
 
   echo '<div class="webinar-archives">';
@@ -76,16 +71,10 @@ if($wp_query->have_posts()) {
     $wp_query->the_post();
     ?>
     <article class="job">
-    	<?php /* if(has_post_thumbnail()) {
-	    	echo '<div class="webinar__figure">' . the_post_thumbnail('medium', array('class' => 'webinar__img')) . '</div>';
-    	}
-    	*/?>
-		
+
 		<?php if( get_field('job_image') ): ?>
 
 			<div class="webinar__figure">	
-				<?php print_r(get_sub_field('job_image'));?>
-				
 				<?php if( have_rows('hero') ): ?>
 					<?php while ( have_rows('hero') ) : the_row(); ?>
 						<img src="<?php the_sub_field('job_image'); ?>" class="webinar__img" />

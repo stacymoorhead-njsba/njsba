@@ -1,4 +1,5 @@
 {% spaceless %}
+	{% if job_details.job_map %}
 		<div>
 			<iframe
 				src="https://www.google.com/maps?q={{ job_details.job_map.lat }},{{ job_details.job_map.lng }}&output=embed"
@@ -8,48 +9,59 @@
 				style="border:0"
 				allowfullscreen>
 			</iframe>
-		</div>		
+		</div>	
+	{% endif %}
 		<div class="gray_bg">
 			<h3>Job Overview</h3>
-			<div class="job-detail">
-				<div class="job_icon">
-					<i class="far fa-2x fa-calendar-alt"></i>
+			{% if job_details.job_closes %}
+				<div class="job-detail">
+					<div class="job_icon">
+						<i class="far fa-2x fa-calendar-alt"></i>
+					</div>
+					<div class="job_text">
+						<span><strong>Closes:</strong></span>
+						<span>{{job_details.job_closes}}</span>
+					</div
 				</div>
-				<div class="job_text">
-					<span><strong>Closes:</strong></span>
-					<span>{{job_details.job_closes}}</span>
-				</div
-			</div>
-			<div class="job-detail">
-				<div class="job_icon">
-					<i class="far fa-2x fa-map"></i>
+			{% endif %}
+			{% if job_details.job_location%}
+				<div class="job-detail">
+					<div class="job_icon">
+						<i class="far fa-2x fa-map"></i>
+					</div>
+					<div class="job_text">
+						<span><strong>Location:</strong></span>
+						<span>{{job_details.job_location}}</span>
+					</div>	
 				</div>
-				<div class="job_text">
-					<span><strong>Location:</strong></span>
-					<span>{{job_location}}</span>
+			{% endif %}
+			{% if job_details.job_title %}	
+				<div class="job-detail">
+					<div class="job_icon">
+						<i class="far fa-2x fa-address-card"></i>
+					</div>
+					<div class="job_text">
+						<span><strong>Job Title:</strong></span>
+						<span>{{job_details.job_title}}</span>
+					</div>	
+				</div>
+			{% endif %}
+			{% if job_details.job_contact %}
+				<div class="job-detail">
+					<div class="job_icon">
+						<i class="far fa-2x fa-user"></i>
+					</div>
+					<div class="job_text">
+						<span><strong>Contact:</strong></span>
+						<span><a href="mailto:{{job_details.job_contact}}">{{job_details.job_contact}}</a></span>
+					</div>	
+				</div>
+			{% endif %}	
+			{% if job_details.application_link %}
+				<div class="apply">
+					<a class="btn btn--primary" href="{{job_details.application_link}}">Apply</a>
 				</div>	
-			</div>
-			<div class="job-detail">
-				<div class="job_icon">
-					<i class="far fa-2x fa-address-card"></i>
-				</div>
-				<div class="job_text">
-					<span><strong>Job Title:</strong></span>
-					<span>{{job_title}}</span>
-				</div>	
-			</div>
-			<div class="job-detail">
-				<div class="job_icon">
-					<i class="far fa-2x fa-user"></i>
-				</div>
-				<div class="job_text">
-					<span><strong>Contact:</strong></span>
-					<span><a href="mailto:{{job_contact}}"</a></span>
-				</div>	
-			</div>
-			<div class="apply">
-				<a class="btn btn--primary" href="{{application_link}}">Apply</a>
-			</div>	
+			{% endif %}
 		</div>
 
 {% endspaceless %}
