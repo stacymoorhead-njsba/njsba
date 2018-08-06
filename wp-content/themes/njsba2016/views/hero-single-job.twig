@@ -11,7 +11,7 @@
     <div class="page-header__primary">
 
       <h1 class="title">
-        {{title}}
+        {{post_title}}
       </h1>
 
       {% if byline %}
@@ -25,14 +25,21 @@
         </p>
 
       {% endif %}
+      {% if hero.district_url %}
+
+        <p class="subhead">
+          <a href="{{hero.district_url}}">{{hero.district_text}}</a>
+        </p>
+
+      {% endif %}	  
     </div>
     
 
     <aside class="page-header__secondary">
       {# JOB IMAGE #}
       
-        {% if job_image %}
-			<img class="article__post-image" src="{{job_image}}" alt="Job logo">
+        {% if hero.job_image %}
+			<img class="job-image" src="{{hero.job_image}}" alt="Job logo">
 		{% endif %}
 		
 

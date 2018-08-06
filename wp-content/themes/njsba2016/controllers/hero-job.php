@@ -122,4 +122,4 @@ ob_start();
 ob_end_clean();
 
 
-Timber::render('hero.twig', $context);
+Timber::render('hero.twig', $context, false, 'none');

@@ -1,6 +1,13 @@
 {% spaceless %}
 		<div>
-			{{job_map}}
+			<iframe
+				src="https://www.google.com/maps?q={{ job_details.job_map.lat }},{{ job_details.job_map.lng }}&output=embed"
+				width="600"
+				height="450"
+				frameborder="0"
+				style="border:0"
+				allowfullscreen>
+			</iframe>
 		</div>		
 		<div class="gray_bg">
 			<h3>Job Overview</h3>
@@ -10,7 +17,7 @@
 				</div>
 				<div class="job_text">
 					<span><strong>Closes:</strong></span>
-					<span>{{job_closes}}</span>
+					<span>{{job_details.job_closes}}</span>
 				</div
 			</div>
 			<div class="job-detail">

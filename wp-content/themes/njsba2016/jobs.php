@@ -84,12 +84,16 @@ if($wp_query->have_posts()) {
 		<?php if( get_field('job_image') ): ?>
 
 			<div class="webinar__figure">	
-				<img src="<?php the_field('job_image'); ?>" class="webinar__img" />
+				<?php print_r(get_sub_field('job_image'));?>
+				
+				<?php if( have_rows('hero') ): ?>
+					<?php while ( have_rows('hero') ) : the_row(); ?>
+						<img src="<?php the_sub_field('job_image'); ?>" class="webinar__img" />
+					<?php	endwhile; ?>
+					<?php else : ?>
+				<?php endif; ?>
 			</div>
-
 		<?php endif; ?>
-
-		
 
     	<div class="job__body">
       	<h3 class="title"><a href="<?php echo esc_url( get_permalink() ) ?>"><?php the_title(); ?></a></h3>

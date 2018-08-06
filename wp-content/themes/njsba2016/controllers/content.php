@@ -35,8 +35,16 @@ if(!empty($context['content'])){
 	if ($sidebar = get_field('sidebar')) {
 		$context['find_your_fsr'] = $sidebar[0]['find_your_fsr'];
 	}
+	
+	if (get_post_type() == 'jobs') {
+		$context['job_details'] = get_fields(get_the_ID());
+		Timber::render('content-job.twig', $context);
+	} else {
+		Timber::render('content.twig', $context);
+	}
+
 		
 
-	Timber::render('content.twig', $context);
+	
 	
 }
