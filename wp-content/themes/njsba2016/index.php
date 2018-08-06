@@ -23,7 +23,7 @@
 
 		Components\build_with( get_queried_object(),'person');
 
-	}elseif( $suffixes[0] == 'single-job' ){
+	}elseif( $suffixes[0] == 'job_details' ){
 
 		Components\build_with( get_queried_object(),'job');	
 

@@ -3,45 +3,9 @@
     "title": "Job Details",
     "fields": [
         {
-            "key": "field_5b55d9a6607ea",
-            "label": "Closes",
-            "name": "job_closes",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1
-        },
-        {
-            "key": "field_5b55d9a660810",
-            "label": "Description",
-            "name": "webinar_description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "wpautop",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_5b55d9a660837",
-            "label": "Webinar Image",
-            "name": "webinar_image",
+            "label": "Job Image",
+            "name": "job_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -63,83 +27,45 @@
             "mime_types": ""
         },
         {
-            "key": "field_5b55d9a660876",
-            "label": "Application Link",
-            "name": "application_link",
-            "type": "url",
-            "instructions": "",
+            "key": "field_5b55d9a660810",
+            "label": "Description",
+            "name": "job_description",
+            "type": "textarea",
+            "instructions": "Appears on job list page.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5b55d9a6607ea",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
         },
         {
-            "key": "field_5b55d9a6608a1",
-            "label": "File Download",
-            "name": "file_download",
-            "type": "file",
+            "key": "field_5b609d8af3aaa",
+            "label": "Job Closes",
+            "name": "job_closes",
+            "type": "date_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5b55d9a660855",
-                        "operator": "==",
-                        "value": "download"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
         },
         {
-            "key": "field_5b55d9a6608cd",
-            "label": "Other URL",
-            "name": "other_url",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5b55d9a660855",
-                        "operator": "==",
-                        "value": "other"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5b55d9a6608f1",
-            "label": "Link Text",
-            "name": "webinar_link_text",
+            "key": "field_5b609d9ff3aab",
+            "label": "Job Location",
+            "name": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -150,10 +76,84 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b609db89816c",
+            "label": "Job Title",
+            "name": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b609dc13908c",
+            "label": "Job Contact",
+            "name": "job_contact",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_5b609dd0b0ac0",
+            "label": "Application Link",
+            "name": "application_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b5f717ca1829",
+            "label": "Job Map",
+            "name": "job_map",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
         }
     ],
     "location": [
@@ -166,13 +166,11 @@
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
+    "position": "normal",
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "permalink",
-        "the_content",
         "excerpt",
         "discussion",
         "comments",
@@ -181,12 +179,11 @@
         "author",
         "format",
         "page_attributes",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1532359571
+    "modified": 1533216282
 }

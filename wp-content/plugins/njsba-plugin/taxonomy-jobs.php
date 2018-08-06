@@ -37,7 +37,7 @@ function job_categories() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => false,
-		'rewrite'               => array( 'slug' => 'services/field-services/jobs/' ),
+		'rewrite'              		 => array( 'slug' => 'services/field-services/jobs' ),
 	);
 	register_taxonomy( 'job_categories', 'jobs', $args );
 

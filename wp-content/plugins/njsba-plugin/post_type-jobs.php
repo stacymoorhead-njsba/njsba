@@ -28,7 +28,7 @@ function jobs() {
 		'label'                 => __( 'Job', 'text_domain' ),
 		'description'           => __( 'Jobs', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -41,8 +41,9 @@ function jobs() {
 		'has_archive'           => true ,		
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
- 		'taxonomies'  => array( 'jobs','job_categories' ),
+ 		'taxonomies'  			=> array( 'jobs','job_categories' ),
 		'capability_type'       => 'post',
+		//'rewrite' 				=> array('slug' => 'services/field-services/jobs',),
 	);
 	register_post_type( 'jobs', $args );
 

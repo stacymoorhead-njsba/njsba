@@ -37,7 +37,6 @@ if(!empty($context['content'])){
 	}
 		
 
-
 	Timber::render('content.twig', $context);
 	
 }
