@@ -72,15 +72,10 @@ if($wp_query->have_posts()) {
     ?>
     <article class="job">
 
-		<?php if( get_field('job_image') ): ?>
+		<?php if( get_field('job_logo') ): ?>
 
 			<div class="webinar__figure">	
-				<?php if( have_rows('hero') ): ?>
-					<?php while ( have_rows('hero') ) : the_row(); ?>
-						<img src="<?php the_sub_field('job_image'); ?>" class="webinar__img" />
-					<?php	endwhile; ?>
-					<?php else : ?>
-				<?php endif; ?>
+				<img src="<?php the_field('job_logo'); ?>" class="webinar__img" />
 			</div>
 		<?php endif; ?>
 

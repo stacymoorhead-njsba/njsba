@@ -22,7 +22,9 @@ if(in_the_loop()==true && empty($context['title'])){
 		
 		$context['title'] = get_field('county_name');
 
-	}else{
+	}elseif (is_tax( 'jobs' )) {
+		$context['title'] = single_term_title();	
+	} else{
 
 		$context['title'] = get_the_title();
 	}

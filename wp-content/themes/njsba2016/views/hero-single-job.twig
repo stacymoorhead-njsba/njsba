@@ -1,6 +1,6 @@
 {% spaceless %}
 <main id="site-main">
-<header class="page-header{% if job_image %} page-header--has-image{% endif %}">
+<header class="page-header{% if job_logo %} page-header--has-image{% endif %}">
 
     {% if breadcrumbs %}
       
@@ -38,8 +38,8 @@
     <aside class="page-header__secondary">
       {# JOB IMAGE #}
       
-        {% if hero.job_image %}
-			<img class="job-image" src="{{hero.job_image}}" alt="Job logo">
+        {% if job_logo %}
+			<img class="job-image" src="{{job_logo}}" alt="Job logo">
 		{% endif %}
 		
 

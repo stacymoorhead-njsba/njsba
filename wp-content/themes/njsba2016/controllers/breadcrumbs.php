@@ -14,6 +14,7 @@ $nope = array(
 	'/category/',
 	'/uncategorized/',
 	'/people/',
+	'/jobs/',
 	);
 
 //the current link
@@ -115,7 +116,21 @@ if(get_class($context) == 'WP_Post_Type'){
 
 		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );
 
+	}elseif($context->post_type == 'jobs'){
+
+
+		$menu_parameters = array(
+		    'theme_location' => 'jobs',
+		    'container'       => false,
+  			'echo'            => false,
+  			'items_wrap'      => '%3$s',
+  			'depth'           => 0,
+		  	);
+
+		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );
+
 	}
+
 
 	$here = array(
 		'text' => $context->post_title,
@@ -164,6 +179,17 @@ if(get_class($context) == 'WP_Post_Type'){
   			'depth'           => 0,
 		  	);
 		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );
+	
+	}elseif($context->taxonomy == 'category'){
+
+		$menu_parameters = array(
+		    'theme_location' => 'jobs',
+		    'container'       => false,
+  			'echo'            => false,
+  			'items_wrap'      => '%3$s',
+  			'depth'           => 0,
+		  	);
+		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );	
 
 
 	}elseif($context->taxonomy == 'event-categories'){
