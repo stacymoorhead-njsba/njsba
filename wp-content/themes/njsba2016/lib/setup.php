@@ -35,6 +35,7 @@ function setup() {
     'counties'  => 'Counties Breadcrumb Navigation',
     'meetings'  => 'Meetings Breadcrumb Navigation',
     'people'    => 'People Breadcrumb Navigation',
+	'jobs' 		=> 'Jobs Breadcrumb Navigation', 
   ]);
 
 

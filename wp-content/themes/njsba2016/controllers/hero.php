@@ -18,12 +18,11 @@ if(!empty($context['archive'])){
 if(in_the_loop()==true && empty($context['title'])){
 
 	$context = get_field('hero')[0];
+
 	if (get_field('county_name')) {
 		
 		$context['title'] = get_field('county_name');
 
-	}elseif (is_tax( 'jobs' )) {
-		$context['title'] = single_term_title();	
 	} else{
 
 		$context['title'] = get_the_title();
@@ -38,8 +37,10 @@ if(in_the_loop()==true && empty($context['title'])){
 		'acf_arg' => the 2nd argument for get field, for example, get_field('hero', taxonomy_term_object);
 		'title' => whatever you want to show up
 	*/
-
-	$title = $context['title'];
+	if ($context['acf_arg']->post_type == 'page' && isset($_GET['category'])) {
+		$term = get_term_by('slug', $_GET['category'], 'job_categories');
+		$title = $context['acf_arg']->post_title . ': ' . $term->name;	
+	} else $title = $context['title'];
 
 	//PDF COVER IMAGE
 	$cover_image ='';

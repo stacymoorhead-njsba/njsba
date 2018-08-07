@@ -45,11 +45,13 @@ if(get_class($context) == 'WP_Post_Type'){
 				$link = implode('/', $parents);
 
 				if($parent = get_page_by_path($link)){
-					$navigation[] = array(
-					'text' => $parent->post_title,
-					'url' => get_permalink($parent->ID),
-					);
 
+					if ($parent->post_title != $context->post_title ){
+						$navigation[] = array(
+						'text' => $parent->post_title,
+						'url' => get_permalink($parent->ID),
+						);	
+					}
 				}
 
 				array_pop($parents);
@@ -131,7 +133,6 @@ if(get_class($context) == 'WP_Post_Type'){
 
 	}
 
-
 	$here = array(
 		'text' => $context->post_title,
 		);
@@ -179,17 +180,6 @@ if(get_class($context) == 'WP_Post_Type'){
   			'depth'           => 0,
 		  	);
 		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );
-	
-	}elseif($context->taxonomy == 'category'){
-
-		$menu_parameters = array(
-		    'theme_location' => 'jobs',
-		    'container'       => false,
-  			'echo'            => false,
-  			'items_wrap'      => '%3$s',
-  			'depth'           => 0,
-		  	);
-		$menu .= strip_tags(wp_nav_menu( $menu_parameters ), '<li> <a>' );	
 
 
 	}elseif($context->taxonomy == 'event-categories'){

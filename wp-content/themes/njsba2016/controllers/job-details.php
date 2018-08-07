@@ -1,11 +1,11 @@
 <?php
 
-$context['job_map'] = get_field('job_map');
+/*$context['job_map'] = get_field('job_map');
 $context['job_closes'] = get_field('job_closes');
 $context['job_location'] = get_field('job_location');
 $context['job_title'] = get_field('job_title');
 $context['job_contact'] = get_field('job_contact');
-$context['application_link'] = get_field('application_link');
+$context['application_link'] = get_field('application_link');*/
 
 ob_start();
 
