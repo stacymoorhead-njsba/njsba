@@ -1,7 +1,7 @@
 {% spaceless %}
 	{% if job_details.job_map %}
 		<div>
-			<h3>Location Should Show Here{{job_details.job_location}}</h3>
+			<h3>{{job_details.job_location}}</h3>
 			<iframe
 				src="https://www.google.com/maps?q={{ job_details.job_map.lat }},{{ job_details.job_map.lng }}&output=embed"
 				width="600"
